@@ -6,6 +6,6 @@ type ShopControllers struct {
 	beego.Controller
 }
 
-func get() {
-
+func Get() {
+	beego.Info("Hello World")
 }
