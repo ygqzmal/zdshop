@@ -8,6 +8,20 @@ import (
 	"github.com/astaxie/beego/logs"
 )
 
+//说明：日志记录
+//在conf下app.conf中进行配置, 只保存最近10个文件，会不停覆盖。最新记录在app.log中
+//maxlines = 100 表示每个文件最大行数
+//maxsize = 1024 表示每个文件最大大小
+
+/*
+在main函数中进行调用
+func init() {
+	//日志写入
+	_ = utils.InitLogger()
+}
+ */
+
+
 // RFC5424 log message levels.
 const (
 	LevelEmergency = iota
