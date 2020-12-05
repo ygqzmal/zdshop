@@ -1,9 +1,10 @@
 package main
 
 import (
-	_ "zdshop/routers"
-
 	"github.com/astaxie/beego"
+	_ "zdshop/routers"
+	//初始化orm, 操作数据库
+	_ "zdshop/models"
 )
 
 func main() {
