@@ -16,7 +16,7 @@ type User struct {
 	RegisterTime    time.Time          `orm:"auto_now_add"`                  //注册时间, 第一次保存才设置时间
 	LoginNum        int                `orm:"default(0)"`                    //登录次数
 	LastLoginIp     string             `orm:"size(20);default(\"未登录过\")"`    //最后一次登录ip
-	LastLoginTime   time.Time          `orm:"auto_now_add;type(datetime)"`   //最后一次登录时间,每次 model 保存时都会对时间自动更新
+	LastLoginTime   time.Time          `orm:"auto_now;type(datetime)"`       //最后一次登录时间,每次 model 保存时都会对时间自动更新
 	Logistics       *Logistics         `orm:"reverse(one)"`
 	Information     []*Information     `orm:"reverse(many)"`
 	Admin           []*Admin           `orm:"reverse(many)"`
@@ -28,7 +28,7 @@ type User struct {
 type Logistics struct {
 	Id          int
 	User        *User     `orm:"rel(one)"`                      //用户Id
-	Time        time.Time `orm:"auto_now_add;type(datetime)"`   //流动时间
+	Time        time.Time `orm:"auto_now;type(datetime)"`       //流动时间
 	InFlow      string    `orm:"size(1);type(char);default(0)"` //资金流动判断 0-进账 1-出账
 	AMoney      float64   `orm:"default(0)"`                    //流动金额
 	Description string    `orm:"size(50);default(\"未知\")"`      //流动描述
@@ -62,9 +62,9 @@ type Admin struct {
 //管理员操作表
 type Operation struct {
 	Id      int
-	Admin   *Admin    `orm:"rel(fk)"`                 //管理员-管理员表外键
-	Time    time.Time `orm:"auto_now;type(datetime)"` //操作时间
-	Content string    `orm:"size(100)"`               //操作内容
+	Admin   *Admin    `orm:"rel(fk)"`   //管理员-管理员表外键
+	Time    time.Time `orm:"auto_now"`  //操作时间
+	Content string    `orm:"size(100)"` //操作内容
 }
 
 //领域表
@@ -125,18 +125,37 @@ type Address struct {
 //商品表
 type Goods struct {
 	Id          int
-	Name        string          `orm:"size(50)"` //商品名称
-	GoodsBrief  string          //商品简介
-	GoodsState  string          `orm:"size(1);type(char);default(0)"` //商品状态 0-上架 1-下架
-	Explain     string          `orm:"type(text)"`                    //说明
-	CreateTime  time.Time       `orm:"auto_now_add"`                  //商品录入时间
-	UpdateTime  time.Time       `orm:"auto_now_add"`                  //最后修改时间
-	SalesValue  int             `orm:"default(0)"`                    //销量
-	Category    *GoodsCategory  `orm:"rel(fk)"`                       //分类id
-	Parameter   *GoodsParameter `orm:"rel(fk)"`                       //参数id
-	ShopCart    []*ShopCart     `orm:"reverse(many)"`
-	GoodsBanner []*GoodsBanner  `orm:"reverse(many)"`
-	OrderGoods  []*OrderGoods   `orm:"reverse(many)"`
+	Name        string         `orm:"size(50)"` //商品名称
+	GoodsBrief  string         //商品简介 数据库类型应该为blob
+	GoodsState  string         `orm:"size(1);type(char);default(0)"` //商品状态 0-上架 1-下架
+	Explain     string         `orm:"type(30)"`                      //说明
+	CreateTime  time.Time      `orm:"auto_now_add"`                  //商品录入时间
+	UpdateTime  time.Time      `orm:"auto_now"`                      //最后修改时间
+	SalesValue  int            `orm:"default(0)"`                    //销量
+	Category    *GoodsCategory `orm:"rel(fk)"`                       //分类id
+	ShopCart    []*ShopCart    `orm:"reverse(many)"`
+	GoodsBanner []*GoodsBanner `orm:"reverse(many)"`
+	OrderGoods  []*OrderGoods  `orm:"reverse(many)"`
+}
+
+//商品参数表
+type GoodsParameter struct {
+	Id             int
+	Good           *Goods  `orm:"rel(fk)"`  //商品id
+	Parameter      string  `orm:"size(30)"` //商品参数
+	Parameter2     string  //商品参数Json形式(暂时不用) 数据库类型应该为blob
+	GoodsTruePrice float64 //商品市场价
+	GoodsNowPrice  float64 //商品批发价
+	IsDefault      string  `orm:"size(1);type(char);default(0)"` //默认参数 0-不默认 1-默认
+	GoodsNumber    int     //产品库存
+}
+
+//商品图片表
+type GoodsBanner struct {
+	Id         int
+	Goods      *Goods `orm:"rel(fk)"`    //商品id
+	GoodsOrder int    `orm:"default(0)"` //图片排序 0-封面，1-第一张...
+	GoodsUrl   string `orm:"size(255)"`  //图片路径
 }
 
 //商品分类表
@@ -148,19 +167,6 @@ type GoodsCategory struct {
 	Goods     []*Goods `orm:"reverse(many)"`
 }
 
-//商品参数表
-type GoodsParameter struct {
-	Id             int
-	Good           *Goods   `orm:"rel(fk)"`  //商品id
-	Parameter      string   `orm:"size(30)"` //商品参数
-	Parameter2     string   //商品参数Json形式(暂时不用)
-	GoodsTruePrice float64  //商品市场价
-	GoodsNowPrice  float64  //商品批发价
-	IsDefault      string   `orm:"size(1);type(char);default(0)"` //默认参数 0-不默认 1-默认
-	GoodsNumber    int      //产品库存
-	Goods          []*Goods `orm:"reverse(many)"`
-}
-
 //购物车表
 type ShopCart struct {
 	Id           int
@@ -168,14 +174,6 @@ type ShopCart struct {
 	Good         *Goods        `orm:"rel(fk)"`      //商品id
 	Number       int           `orm:"default(1)"`   //数量
 	Time         time.Time     `orm:"auto_now_add"` //添加时间
-}
-
-//商品图片表
-type GoodsBanner struct {
-	Id         int
-	Goods      *Goods `orm:"rel(fk)"`    //商品id
-	GoodsOrder int    `orm:"default(0)"` //图片排序 0-封面，1-第一张...
-	GoodsUrl   string `orm:"size(255)"`  //图片路径
 }
 
 //订单表

@@ -7,6 +7,30 @@ import (
 
 func init() {
 
+	beego.GlobalControllerRouter["zdshop/controllers:GoodsController"] = append(beego.GlobalControllerRouter["zdshop/controllers:GoodsController"],
+		beego.ControllerComments{
+			Method: "AddCategory",
+			Router: `/AddCategory`,
+			AllowHTTPMethods: []string{"post"},
+			MethodParams: param.Make(),
+			Params: nil})
+
+	beego.GlobalControllerRouter["zdshop/controllers:GoodsController"] = append(beego.GlobalControllerRouter["zdshop/controllers:GoodsController"],
+		beego.ControllerComments{
+			Method: "AddGoods",
+			Router: `/AddGoods`,
+			AllowHTTPMethods: []string{"post"},
+			MethodParams: param.Make(),
+			Params: nil})
+
+	beego.GlobalControllerRouter["zdshop/controllers:GoodsController"] = append(beego.GlobalControllerRouter["zdshop/controllers:GoodsController"],
+		beego.ControllerComments{
+			Method: "UpdateGoods",
+			Router: `/UpdateGoods`,
+			AllowHTTPMethods: []string{"post"},
+			MethodParams: param.Make(),
+			Params: nil})
+
 	beego.GlobalControllerRouter["zdshop/controllers:ObjectController"] = append(beego.GlobalControllerRouter["zdshop/controllers:ObjectController"],
 		beego.ControllerComments{
 			Method: "Post",

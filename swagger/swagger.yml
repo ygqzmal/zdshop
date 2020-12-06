@@ -1,0 +1,198 @@
+swagger: "2.0"
+info:
+  title: beego Test API
+  description: beego has a very cool tools to autogenerate documents for your API
+  version: 1.0.0
+  termsOfService: http://beego.me/
+  contact:
+    email: astaxie@gmail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+basePath: /v1
+paths:
+  /goods/AddCategory:
+    post:
+      tags:
+      - goods
+      description: AddCategory
+      operationId: GoodsController.AddCategory
+      parameters:
+      - in: pwd
+        name: username
+        description: body for user content
+        schema:
+          $ref: '#/definitions/.true'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/.Category'
+        "403":
+          description: lost data
+  /goods/AddGoods:
+    post:
+      tags:
+      - goods
+      description: AddGoods and AddGoodsParameter and AddGoodsBanner
+      operationId: GoodsController.AddGoods
+      parameters:
+      - in: formData
+        name: name
+        description: 商品名称
+        schema:
+          $ref: '#/definitions/.true'
+      - in: formData
+        name: brief
+        description: 商品简介
+        schema:
+          $ref: '#/definitions/.true'
+      - in: formData
+        name: state
+        description: 商品状态 0-上架 1-下架
+        schema:
+          $ref: '#/definitions/.true'
+      - in: formData
+        name: explain
+        description: 商品说明
+        schema:
+          $ref: '#/definitions/.true'
+      - in: formData
+        name: categoryId
+        description: 商品分类id
+        schema:
+          $ref: '#/definitions/.true'
+      responses:
+        "200":
+          description: '{string} 商品添加成功'
+        "400":
+          description: 商品添加失败
+  /goods/UpdateGoods:
+    post:
+      tags:
+      - goods
+      description: UpdateGoods
+      operationId: GoodsController.UpdateGoods
+      parameters:
+      - in: pwd
+        name: name
+        description: body for user content
+        schema:
+          $ref: '#/definitions/.true'
+      responses:
+        "200":
+          description: '{string} 修改商品成功'
+        "403":
+          description: lost data
+  /object/:
+    get:
+      tags:
+      - object
+      description: get all objects
+      operationId: ObjectController.GetAll
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Object'
+        "403":
+          description: :objectId is empty
+    post:
+      tags:
+      - object
+      description: create object
+      operationId: ObjectController.Create
+      parameters:
+      - in: body
+        name: body
+        description: The object content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Object'
+      responses:
+        "200":
+          description: '{string} models.Object.Id'
+        "403":
+          description: body is empty
+  /object/{objectId}:
+    get:
+      tags:
+      - object
+      description: find object by objectid
+      operationId: ObjectController.Get
+      parameters:
+      - in: path
+        name: objectId
+        description: the objectid you want to get
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Object'
+        "403":
+          description: :objectId is empty
+    put:
+      tags:
+      - object
+      description: update the object
+      operationId: ObjectController.Update
+      parameters:
+      - in: path
+        name: objectId
+        description: The objectid you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: The body
+        required: true
+        schema:
+          $ref: '#/definitions/models.Object'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Object'
+        "403":
+          description: :objectId is empty
+    delete:
+      tags:
+      - object
+      description: delete the object
+      operationId: ObjectController.Delete
+      parameters:
+      - in: path
+        name: objectId
+        description: The objectId you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: objectId is empty
+definitions:
+  .Category:
+    type: object
+  .true:
+    type: object
+  models.Object:
+    title: Object
+    type: object
+    properties:
+      ObjectId:
+        type: string
+      PlayerName:
+        type: string
+      Score:
+        type: integer
+        format: int64
+tags:
+- name: object
+  description: |
+    Operations about object
+- name: user
+  description: |
+    Operations about Users
