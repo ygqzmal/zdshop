@@ -84,6 +84,17 @@ paths:
           description: '{string} 修改商品成功'
         "403":
           description: lost data
+  /goods/tex:
+    post:
+      tags:
+      - goods
+      description: Text
+      operationId: GoodsController.Text
+      responses:
+        "200":
+          description: '{string} 测试通过'
+        "403":
+          description: lost data
   /object/:
     get:
       tags:

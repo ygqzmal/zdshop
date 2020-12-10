@@ -50,11 +50,12 @@ type Admin struct {
 	Id                   int          //管理员Id
 	User                 *User        `orm:"rel(fk);unique"`                //用户Id-用户表外键
 	Role                 string       `orm:"size(1);type(char);default(1)"` //分总管理员		0-总管理员 1-分管理员
+	JobPosition          string       `orm:"size(20);default(\"普通员工\")"`    //管理员职位备注
 	GoodsAuthority       string       `orm:"size(1);type(char);default(0)"` //商品权限	  	0-没有权限 1-可查看权限 2-可操作商品数据权限
 	OrderAuthority       string       `orm:"size(1);type(char);default(0)"` //订单权限   	0-没有权限 1-可查看权限 2-可操作商品数据权限
 	DistributorAuthority string       `orm:"size(1);type(char);default(0)"` //分销权限   	0-没有权限 1-可查看权限 2-可操作商品数据权限
 	CapitalAuthority     string       `orm:"size(1);type(char);default(0)"` //资金权限		0-没有权限 1-可查看权限
-	ServiceAuthority     string       `orm:"size(1);type(char);default(0)"` //客服权限		0-没有权限 1-可查看权限
+	MessageAuthority     string       `orm:"size(1);type(char);default(0)"` //消息权限		0-没有权限 1-可查看权限
 	AccordAuthority      string       `orm:"size(1);type(char);default(0)"` //协议管理		0-没有权限 1-可查看权限 2-可操作商品数据权限
 	Operation            []*Operation `orm:"reverse(many)"`
 }
@@ -136,12 +137,13 @@ type Goods struct {
 	ShopCart    []*ShopCart    `orm:"reverse(many)"`
 	GoodsBanner []*GoodsBanner `orm:"reverse(many)"`
 	OrderGoods  []*OrderGoods  `orm:"reverse(many)"`
+	GoodsParameter []*GoodsParameter `orm:"reverse(many)"`
 }
 
 //商品参数表
 type GoodsParameter struct {
 	Id             int
-	Good           *Goods  `orm:"rel(fk)"`  //商品id
+	Goods		   *Goods	`orm:"rel(fk)"` //
 	Parameter      string  `orm:"size(30)"` //商品参数
 	Parameter2     string  //商品参数Json形式(暂时不用) 数据库类型应该为blob
 	GoodsTruePrice float64 //商品市场价
@@ -154,7 +156,7 @@ type GoodsParameter struct {
 type GoodsBanner struct {
 	Id         int
 	Goods      *Goods `orm:"rel(fk)"`    //商品id
-	GoodsOrder int    `orm:"default(0)"` //图片排序 0-封面，1-第一张...
+	GoodsOrder int     //图片排序 0-封面，1-第一张...
 	GoodsUrl   string `orm:"size(255)"`  //图片路径
 }
 
