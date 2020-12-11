@@ -9,33 +9,41 @@ func init() {
 
 	beego.GlobalControllerRouter["zdshop/controllers:GoodsController"] = append(beego.GlobalControllerRouter["zdshop/controllers:GoodsController"],
 		beego.ControllerComments{
-			Method: "AddCategory",
-			Router: `/AddCategory`,
+			Method: "Post",
+			Router: `/`,
 			AllowHTTPMethods: []string{"post"},
 			MethodParams: param.Make(),
 			Params: nil})
 
 	beego.GlobalControllerRouter["zdshop/controllers:GoodsController"] = append(beego.GlobalControllerRouter["zdshop/controllers:GoodsController"],
 		beego.ControllerComments{
-			Method: "AddGoods",
-			Router: `/AddGoods`,
-			AllowHTTPMethods: []string{"post"},
+			Method: "GetAll",
+			Router: `/:cid/:pageIndex`,
+			AllowHTTPMethods: []string{"get"},
 			MethodParams: param.Make(),
 			Params: nil})
 
 	beego.GlobalControllerRouter["zdshop/controllers:GoodsController"] = append(beego.GlobalControllerRouter["zdshop/controllers:GoodsController"],
 		beego.ControllerComments{
-			Method: "UpdateGoods",
-			Router: `/UpdateGoods`,
-			AllowHTTPMethods: []string{"post"},
+			Method: "GetOne",
+			Router: `/:gid`,
+			AllowHTTPMethods: []string{"get"},
 			MethodParams: param.Make(),
 			Params: nil})
 
 	beego.GlobalControllerRouter["zdshop/controllers:GoodsController"] = append(beego.GlobalControllerRouter["zdshop/controllers:GoodsController"],
 		beego.ControllerComments{
-			Method: "Tex",
-			Router: `/tex`,
-			AllowHTTPMethods: []string{"post"},
+			Method: "Delete",
+			Router: `/:gid`,
+			AllowHTTPMethods: []string{"delete"},
+			MethodParams: param.Make(),
+			Params: nil})
+
+	beego.GlobalControllerRouter["zdshop/controllers:GoodsController"] = append(beego.GlobalControllerRouter["zdshop/controllers:GoodsController"],
+		beego.ControllerComments{
+			Method: "Put",
+			Router: `/id`,
+			AllowHTTPMethods: []string{"put"},
 			MethodParams: param.Make(),
 			Params: nil})
 
