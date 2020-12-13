@@ -1,0 +1,100 @@
+2020/12/12 16:37:38.331 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/12 16:37:42.343 [D] [server.go:2802] 127.0.0.1 - - [12/Dec/2020 04:37:42] "GET /swagger/ HTTP/1.1 200 0" 0.000995  Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3823.400 QQBrowser/10.7.4307.400
+
+2020/12/12 16:37:43.547 [D] [server.go:2802] 127.0.0.1 - - [12/Dec/2020 04:37:43] "GET /swagger/swagger.json HTTP/1.1 200 0" 0.000000 http://127.0.0.1:8080/swagger/ Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3823.400 QQBrowser/10.7.4307.400
+
+2020/12/12 16:39:04.938 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/12 16:40:51.561 [I] [category.go:23] 电子产品 
+2020/12/12 16:40:51.561 [I] [category.go:24] 0 
+2020/12/12 16:40:51.562 [D] [server.go:2802] 127.0.0.1 - - [12/Dec/2020 04:40:51] "POST /v1/category?name=%E7%94%B5%E5%AD%90%E4%BA%A7%E5%93%81&parentId HTTP/1.1 200 0" 0.001996  PostmanRuntime/7.26.8
+
+2020/12/12 16:41:04.950 [I] [category.go:23] 电子产品 
+2020/12/12 16:41:04.950 [I] [category.go:24] 1 
+2020/12/12 16:41:04.950 [D] [server.go:2802] 127.0.0.1 - - [12/Dec/2020 04:41:04] "POST /v1/category?name=%E7%94%B5%E5%AD%90%E4%BA%A7%E5%93%81&parentId=1 HTTP/1.1 200 0" 0.000998  PostmanRuntime/7.26.8
+
+2020/12/12 18:39:48.508 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/12 18:40:41.821 [I] [goods.go:59] 事务开启： <nil> 
+2020/12/12 18:40:41.821 [I] [goods.go:66] rollback err : <nil> 
+2020/12/12 18:40:41.821 [D] [server.go:2802] 127.0.0.1 - - [12/Dec/2020 06:40:41] "POST /v1/goods HTTP/1.1 200 0" 0.000997  PostmanRuntime/7.26.8
+
+2020/12/12 18:41:27.263 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/12 18:41:39.448 [D] [server.go:2802] 127.0.0.1 - - [12/Dec/2020 06:41:39] "POST /v1/goods/tex HTTP/1.1 404 0" 0.002989  PostmanRuntime/7.26.8
+
+2020/12/12 18:42:03.796 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/12 18:42:21.212 [I] [goods.go:426] Tex 
+2020/12/12 18:42:21.213 [I] [goods.go:428] [] 
+2020/12/12 18:42:21.213 [D] [server.go:2802] 127.0.0.1 - - [12/Dec/2020 06:42:21] "POST /v1/goods/tex HTTP/1.1 200 0" 0.000998  PostmanRuntime/7.26.8
+
+2020/12/12 18:43:52.891 [I] [goods.go:426] Tex 
+2020/12/12 18:43:52.891 [I] [goods.go:428] [123 13 10 32 32 32 32 34 110 97 109 101 34 58 49 44 13 10 32 32 32 32 34 97 114 114 34 58 32 91 13 10 32 32 32 32 32 32 32 32 123 13 10 32 32 32 32 32 32 32 32 32 32 32 32 34 97 34 58 49 44 13 10 32 32 32 32 32 32 32 32 32 32 32 32 34 98 34 58 50 13 10 32 32 32 32 32 32 32 32 125 44 13 10 32 32 32 32 32 32 32 32 123 13 10 32 32 32 32 32 32 32 32 32 32 32 32 34 97 34 58 50 44 13 10 32 32 32 32 32 32 32 32 32 32 32 32 34 98 34 58 50 13 10 32 32 32 32 32 32 32 32 125 13 10 32 32 32 32 93 13 10 125] 
+2020/12/12 18:43:52.892 [D] [server.go:2802] 127.0.0.1 - - [12/Dec/2020 06:43:52] "POST /v1/goods/tex HTTP/1.1 200 0" 0.000955  PostmanRuntime/7.26.8
+
+2020/12/12 18:45:18.432 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/12 18:48:37.374 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/12 18:49:03.603 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/12 18:51:18.506 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/12 18:51:28.158 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/12 18:51:38.907 [D] [server.go:2802] 127.0.0.1 - - [12/Dec/2020 06:51:38] "POST /v1/goods/tex HTTP/1.1 404 0" 0.001995  PostmanRuntime/7.26.8
+
+2020/12/12 18:51:44.805 [D] [server.go:2802] 192.168.0.102 - - [12/Dec/2020 06:51:44] "POST / HTTP/1.1 404 0" 0.000000  axios/0.21.0
+
+2020/12/12 18:52:31.129 [D] [server.go:2802] 192.168.0.102 - - [12/Dec/2020 06:52:31] "POST /v1/goods/tex HTTP/1.1 404 0" 0.000000  axios/0.21.0
+
+2020/12/12 18:52:32.478 [D] [server.go:2802] 127.0.0.1 - - [12/Dec/2020 06:52:32] "POST /v1/goods/tex HTTP/1.1 404 0" 0.000000  PostmanRuntime/7.26.8
+
+2020/12/12 18:52:48.004 [D] [server.go:2802] 192.168.0.102 - - [12/Dec/2020 06:52:48] "POST /v1/goods/tex HTTP/1.1 404 0" 0.000000  axios/0.21.0
+
+2020/12/12 18:53:28.588 [D] [server.go:2802] 192.168.0.102 - - [12/Dec/2020 06:53:28] "POST /v1/goods/tex HTTP/1.1 404 0" 0.000000  axios/0.21.0
+
+2020/12/12 18:54:07.485 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/12 18:55:54.882 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/12 18:55:57.966 [D] [server.go:2802] 127.0.0.1 - - [12/Dec/2020 06:55:57] "POST /v1/goods/tex HTTP/1.1 404 0" 0.000997  PostmanRuntime/7.26.8
+
+2020/12/12 18:57:17.667 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/12 18:57:20.726 [D] [server.go:2802] 127.0.0.1 - - [12/Dec/2020 06:57:20] "POST /v1/goods/tex HTTP/1.1 404 0" 0.000996  PostmanRuntime/7.26.8
+
+2020/12/12 18:58:11.023 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/12 18:59:05.035 [D] [server.go:2802] 127.0.0.1 - - [12/Dec/2020 06:59:05] "POST /v1/goods/tex HTTP/1.1 404 0" 0.000000  PostmanRuntime/7.26.8
+
+2020/12/12 18:59:43.363 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/12 18:59:53.616 [D] [server.go:2802] 127.0.0.1 - - [12/Dec/2020 06:59:53] "POST /v1/goods/tex HTTP/1.1 404 0" 0.001995  PostmanRuntime/7.26.8
+
+2020/12/12 19:00:10.205 [D] [server.go:2802] 127.0.0.1 - - [12/Dec/2020 07:00:10] "GET /swagger/ HTTP/1.1 304 0" 0.000000  Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3823.400 QQBrowser/10.7.4307.400
+
+2020/12/12 19:00:11.092 [D] [server.go:2802] 127.0.0.1 - - [12/Dec/2020 07:00:11] "GET /swagger/swagger.json HTTP/1.1 200 0" 0.000997 http://127.0.0.1:8080/swagger/ Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3823.400 QQBrowser/10.7.4307.400
+
+2020/12/12 19:01:31.437 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/12 19:01:34.549 [D] [server.go:2802] 127.0.0.1 - - [12/Dec/2020 07:01:34] "GET /swagger/ HTTP/1.1 304 0" 0.000997  Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3823.400 QQBrowser/10.7.4307.400
+
+2020/12/12 19:01:34.886 [D] [server.go:2802] 127.0.0.1 - - [12/Dec/2020 07:01:34] "GET /swagger/swagger.json HTTP/1.1 200 0" 0.001001 http://127.0.0.1:8080/swagger/ Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3823.400 QQBrowser/10.7.4307.400
+
+2020/12/12 19:01:41.455 [D] [server.go:2802] 127.0.0.1 - - [12/Dec/2020 07:01:41] "POST /v1/goods/tex HTTP/1.1 404 0" 0.000000  PostmanRuntime/7.26.8
+
+2020/12/12 19:02:16.539 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/12 19:02:19.734 [D] [server.go:2802] 127.0.0.1 - - [12/Dec/2020 07:02:19] "GET /swagger/ HTTP/1.1 200 0" 0.000991  Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3823.400 QQBrowser/10.7.4307.400
+
+2020/12/12 19:02:19.749 [D] [server.go:2802] 127.0.0.1 - - [12/Dec/2020 07:02:19] "GET /swagger/swagger-ui.css HTTP/1.1 200 0" 0.000997 http://127.0.0.1:8080/swagger/ Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3823.400 QQBrowser/10.7.4307.400
+
+2020/12/12 19:02:19.762 [D] [server.go:2802] 127.0.0.1 - - [12/Dec/2020 07:02:19] "GET /swagger/swagger-ui-standalone-preset.js HTTP/1.1 200 0" 0.006990 http://127.0.0.1:8080/swagger/ Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3823.400 QQBrowser/10.7.4307.400
+
+2020/12/12 19:02:19.764 [D] [server.go:2802] 127.0.0.1 - - [12/Dec/2020 07:02:19] "GET /swagger/swagger-ui-bundle.js HTTP/1.1 200 0" 0.013964 http://127.0.0.1:8080/swagger/ Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3823.400 QQBrowser/10.7.4307.400
+
+2020/12/12 19:02:20.318 [D] [server.go:2802] 127.0.0.1 - - [12/Dec/2020 07:02:20] "GET /swagger/swagger.json HTTP/1.1 200 0" 0.000000 http://127.0.0.1:8080/swagger/ Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3823.400 QQBrowser/10.7.4307.400
+
+2020/12/12 19:02:32.876 [I] [goods.go:426] Tex 
+2020/12/12 19:02:32.876 [I] [goods.go:434] [123 13 10 32 32 32 32 34 110 97 109 101 34 58 49 44 13 10 32 32 32 32 34 97 114 114 34 58 32 91 13 10 32 32 32 32 32 32 32 32 123 13 10 32 32 32 32 32 32 32 32 32 32 32 32 34 97 34 58 49 44 13 10 32 32 32 32 32 32 32 32 32 32 32 32 34 98 34 58 50 13 10 32 32 32 32 32 32 32 32 125 44 13 10 32 32 32 32 32 32 32 32 123 13 10 32 32 32 32 32 32 32 32 32 32 32 32 34 97 34 58 50 44 13 10 32 32 32 32 32 32 32 32 32 32 32 32 34 98 34 58 50 13 10 32 32 32 32 32 32 32 32 125 13 10 32 32 32 32 93 13 10 125] 
+2020/12/12 19:02:32.877 [D] [server.go:2802] 127.0.0.1 - - [12/Dec/2020 07:02:32] "POST /v1/goods/tex HTTP/1.1 200 0" 0.001995  PostmanRuntime/7.26.8
+
+2020/12/12 19:03:06.061 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/12 19:03:11.146 [I] [goods.go:427] Tex 
+2020/12/12 19:03:11.147 [I] [goods.go:432] json.Unmarshal err:  json: cannot unmarshal number into Go struct field JsonGood.Name of type string 
+2020/12/12 19:03:11.148 [D] [server.go:2802] 127.0.0.1 - - [12/Dec/2020 07:03:11] "POST /v1/goods/tex HTTP/1.1 200 0" 0.001994  PostmanRuntime/7.26.8
+
+2020/12/12 19:04:14.017 [I] [goods.go:427] Tex 
+2020/12/12 19:04:14.018 [I] [goods.go:432] json.Unmarshal err:  json: cannot unmarshal object into Go struct field JsonGood.Arr of type string 
+2020/12/12 19:04:14.018 [D] [server.go:2802] 127.0.0.1 - - [12/Dec/2020 07:04:14] "POST /v1/goods/tex HTTP/1.1 200 0" 0.000997  PostmanRuntime/7.26.8
+
+2020/12/12 19:05:41.813 [I] [goods.go:427] Tex 
+2020/12/12 19:05:41.814 [I] [goods.go:432] json.Unmarshal err:  json: cannot unmarshal object into Go struct field JsonGood.Arr of type string 
+2020/12/12 19:05:41.815 [D] [server.go:2802] 127.0.0.1 - - [12/Dec/2020 07:05:41] "POST /v1/goods/tex HTTP/1.1 200 0" 0.001995  PostmanRuntime/7.26.8
+

@@ -15,72 +15,33 @@
     },
     "basePath": "/v1",
     "paths": {
-        "/goods/AddCategory": {
-            "post": {
+        "/category/": {
+            "get": {
                 "tags": [
-                    "goods"
+                    "category"
                 ],
-                "description": "AddCategory",
-                "operationId": "GoodsController.AddCategory",
-                "parameters": [
-                    {
-                        "in": "pwd",
-                        "name": "username",
-                        "description": "body for user content",
-                        "schema": {
-                            "$ref": "#/definitions/.true"
-                        }
-                    }
-                ],
+                "description": "获取一级分类",
+                "operationId": "CategoryController.Get First",
                 "responses": {
                     "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#/definitions/.Category"
-                        }
+                        "description": "{string} 成功"
                     },
-                    "403": {
-                        "description": "lost data"
+                    "400": {
+                        "description": "失败"
                     }
                 }
-            }
-        },
-        "/goods/AddGoods": {
+            },
             "post": {
                 "tags": [
-                    "goods"
+                    "category"
                 ],
-                "description": "AddGoods and AddGoodsParameter and AddGoodsBanner",
-                "operationId": "GoodsController.AddGoods",
+                "description": "add category",
+                "operationId": "CategoryController.Post",
                 "parameters": [
                     {
                         "in": "formData",
                         "name": "name",
-                        "description": "商品名称",
-                        "schema": {
-                            "$ref": "#/definitions/.true"
-                        }
-                    },
-                    {
-                        "in": "formData",
-                        "name": "brief",
-                        "description": "商品简介",
-                        "schema": {
-                            "$ref": "#/definitions/.true"
-                        }
-                    },
-                    {
-                        "in": "formData",
-                        "name": "state",
-                        "description": "商品状态 0-上架 1-下架",
-                        "schema": {
-                            "$ref": "#/definitions/.true"
-                        }
-                    },
-                    {
-                        "in": "formData",
-                        "name": "explain",
-                        "description": "商品说明",
+                        "description": "分类名称",
                         "schema": {
                             "$ref": "#/definitions/.true"
                         }
@@ -88,34 +49,42 @@
                     {
                         "in": "formData",
                         "name": "categoryId",
-                        "description": "商品分类id",
+                        "description": "分类名称",
                         "schema": {
-                            "$ref": "#/definitions/.true"
+                            "$ref": "#/definitions/.false"
+                        }
+                    },
+                    {
+                        "in": "formData",
+                        "name": "image",
+                        "description": "分类名称",
+                        "schema": {
+                            "$ref": "#/definitions/.false"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "{string} 商品添加成功"
+                        "description": "{string} 分类添加成功"
                     },
                     "400": {
-                        "description": "商品添加失败"
+                        "description": "分类添加失败"
                     }
                 }
             }
         },
-        "/goods/UpdateGoods": {
-            "post": {
+        "/category/{cid}": {
+            "delete": {
                 "tags": [
-                    "goods"
+                    "category"
                 ],
-                "description": "UpdateGoods",
-                "operationId": "GoodsController.UpdateGoods",
+                "description": "删除某个分类",
+                "operationId": "CategoryController.Delete Category",
                 "parameters": [
                     {
-                        "in": "pwd",
-                        "name": "name",
-                        "description": "body for user content",
+                        "in": "path",
+                        "name": "cid",
+                        "description": "分类id",
                         "schema": {
                             "$ref": "#/definitions/.true"
                         }
@@ -123,10 +92,72 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "{string} 修改商品成功"
+                        "description": "{string} 成功"
                     },
-                    "403": {
-                        "description": "lost data"
+                    "400": {
+                        "description": "失败"
+                    }
+                }
+            }
+        },
+        "/category/{id}": {
+            "get": {
+                "tags": [
+                    "category"
+                ],
+                "description": "根据一级分类id获取二级级分类",
+                "operationId": "CategoryController.Get Second",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "name",
+                        "description": "分类id",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} 成功"
+                    },
+                    "400": {
+                        "description": "失败"
+                    }
+                }
+            }
+        },
+        "/goods/": {
+            "put": {
+                "tags": [
+                    "goods"
+                ],
+                "description": "修改某个分类名字",
+                "operationId": "GoodsController.Put Category",
+                "parameters": [
+                    {
+                        "in": "formDate",
+                        "name": "cid",
+                        "description": "分类id",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    },
+                    {
+                        "in": "formDate",
+                        "name": "name",
+                        "description": "分类名称",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} 成功"
+                    },
+                    "400": {
+                        "description": "失败"
                     }
                 }
             }
@@ -136,11 +167,21 @@
                 "tags": [
                     "goods"
                 ],
-                "description": "Text",
-                "operationId": "GoodsController.Text",
+                "description": "Tex",
+                "operationId": "GoodsController.Tex",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "gid",
+                        "description": "body for user content",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
-                        "description": "{string} 测试通过"
+                        "description": "{string} ok"
                     },
                     "403": {
                         "description": "lost data"
@@ -148,148 +189,524 @@
                 }
             }
         },
-        "/object/": {
+        "/goods/{cid}/{pageIndex}": {
             "get": {
                 "tags": [
-                    "object"
+                    "goods"
                 ],
-                "description": "get all objects",
-                "operationId": "ObjectController.GetAll",
+                "description": "Get Goods",
+                "operationId": "GoodsController.Get All",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "cid",
+                        "description": "category id",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "pageIndex",
+                        "description": "pageIndex",
+                        "schema": {
+                            "$ref": "#/definitions/.false"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.Object"
+                            "$ref": "#/definitions/controllers.Goods"
                         }
                     },
                     "403": {
-                        "description": ":objectId is empty"
-                    }
-                }
-            },
-            "post": {
-                "tags": [
-                    "object"
-                ],
-                "description": "create object",
-                "operationId": "ObjectController.Create",
-                "parameters": [
-                    {
-                        "in": "body",
-                        "name": "body",
-                        "description": "The object content",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/models.Object"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "{string} models.Object.Id"
-                    },
-                    "403": {
-                        "description": "body is empty"
+                        "description": "lost data"
                     }
                 }
             }
         },
-        "/object/{objectId}": {
+        "/goods/{gid}": {
             "get": {
                 "tags": [
-                    "object"
+                    "goods"
                 ],
-                "description": "find object by objectid",
-                "operationId": "ObjectController.Get",
+                "description": "Get Good",
+                "operationId": "GoodsController.Get One",
                 "parameters": [
                     {
                         "in": "path",
-                        "name": "objectId",
-                        "description": "the objectid you want to get",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
+                        "name": "gid",
+                        "description": "good ID",
                         "schema": {
-                            "$ref": "#/definitions/models.Object"
-                        }
-                    },
-                    "403": {
-                        "description": ":objectId is empty"
-                    }
-                }
-            },
-            "put": {
-                "tags": [
-                    "object"
-                ],
-                "description": "update the object",
-                "operationId": "ObjectController.Update",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "objectId",
-                        "description": "The objectid you want to update",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "in": "body",
-                        "name": "body",
-                        "description": "The body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/models.Object"
+                            "$ref": "#/definitions/.true"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#/definitions/models.Object"
-                        }
+                        "description": "{string} ok"
                     },
                     "403": {
-                        "description": ":objectId is empty"
+                        "description": "lost data"
                     }
                 }
             },
             "delete": {
                 "tags": [
-                    "object"
+                    "goods"
                 ],
-                "description": "delete the object",
-                "operationId": "ObjectController.Delete",
+                "description": "delete the good",
+                "operationId": "GoodsController.Delete",
                 "parameters": [
                     {
                         "in": "path",
-                        "name": "objectId",
-                        "description": "The objectId you want to delete",
-                        "required": true,
-                        "type": "string"
+                        "name": "gid",
+                        "description": "body for user content",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "{string} delete success!"
+                        "description": "{string} ok"
                     },
                     "403": {
-                        "description": "objectId is empty"
+                        "description": "lost data"
                     }
                 }
             }
         }
     },
     "definitions": {
-        ".Category": {
+        ".false": {
             "type": "object"
         },
         ".true": {
             "type": "object"
+        },
+        "controllers.Goods": {
+            "title": "Goods",
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "goods": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.Goods"
+                    }
+                },
+                "page_count": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "page_index": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        },
+        "models.Address": {
+            "title": "Address",
+            "type": "object",
+            "properties": {
+                "Content": {
+                    "type": "string"
+                },
+                "Distribution": {
+                    "$ref": "#/definitions/models.Distribution"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "IsDefault": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "OrderInfo": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.OrderInfo"
+                    }
+                },
+                "Tele": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.Admin": {
+            "title": "Admin",
+            "type": "object",
+            "properties": {
+                "AccordAuthority": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "CapitalAuthority": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "DistributorAuthority": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "GoodsAuthority": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "JobPosition": {
+                    "type": "string"
+                },
+                "MessageAuthority": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Operation": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.Operation"
+                    }
+                },
+                "OrderAuthority": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Role": {
+                    "type": "string"
+                },
+                "User": {
+                    "$ref": "#/definitions/models.User"
+                }
+            }
+        },
+        "models.BigDistribution": {
+            "title": "BigDistribution",
+            "type": "object",
+            "properties": {
+                "AdGrade": {
+                    "type": "string"
+                },
+                "AdTer": {
+                    "$ref": "#/definitions/models.Territory"
+                },
+                "AsLocal": {
+                    "$ref": "#/definitions/models.HoldLocal"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Money": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "User": {
+                    "$ref": "#/definitions/models.User"
+                },
+                "UserMoney": {
+                    "type": "number",
+                    "format": "double"
+                }
+            }
+        },
+        "models.Distribution": {
+            "title": "Distribution",
+            "type": "object",
+            "properties": {
+                "AdTer": {
+                    "$ref": "#/definitions/models.Territory"
+                },
+                "Address": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.Address"
+                    }
+                },
+                "AsLocal": {
+                    "$ref": "#/definitions/models.HoldLocal"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Money": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "OrderInfo": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.OrderInfo"
+                    }
+                },
+                "ShopCart": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.ShopCart"
+                    }
+                },
+                "Type": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "User": {
+                    "$ref": "#/definitions/models.User"
+                }
+            }
+        },
+        "models.Goods": {
+            "title": "Goods",
+            "type": "object",
+            "properties": {
+                "Category": {
+                    "$ref": "#/definitions/models.GoodsCategory"
+                },
+                "CreateTime": {
+                    "type": "string",
+                    "format": "datetime"
+                },
+                "Explain": {
+                    "type": "string"
+                },
+                "GoodsBanner": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.GoodsBanner"
+                    }
+                },
+                "GoodsBrief": {
+                    "type": "string"
+                },
+                "GoodsParameter": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.GoodsParameter"
+                    }
+                },
+                "GoodsState": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "OrderGoods": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.OrderGoods"
+                    }
+                },
+                "SalesValue": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "ShopCart": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.ShopCart"
+                    }
+                },
+                "UpdateTime": {
+                    "type": "string",
+                    "format": "datetime"
+                }
+            }
+        },
+        "models.GoodsBanner": {
+            "title": "GoodsBanner",
+            "type": "object",
+            "properties": {
+                "Goods": {
+                    "$ref": "#/definitions/models.Goods"
+                },
+                "GoodsUrl": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "IsDefault": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        },
+        "models.GoodsCategory": {
+            "title": "GoodsCategory",
+            "type": "object",
+            "properties": {
+                "CreateTime": {
+                    "type": "string",
+                    "format": "datetime"
+                },
+                "Goods": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.Goods"
+                    }
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Image": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "ParentId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "UpdateTime": {
+                    "type": "string",
+                    "format": "datetime"
+                }
+            }
+        },
+        "models.GoodsParameter": {
+            "title": "GoodsParameter",
+            "type": "object",
+            "properties": {
+                "Goods": {
+                    "$ref": "#/definitions/models.Goods"
+                },
+                "GoodsNowPrice": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "GoodsNumber": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "GoodsTruePrice": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "IsDefault": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Parameter": {
+                    "type": "string"
+                },
+                "Parameter2": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.HoldLocal": {
+            "title": "HoldLocal",
+            "type": "object",
+            "properties": {
+                "BigDistribution": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.BigDistribution"
+                    }
+                },
+                "Country": {
+                    "type": "string"
+                },
+                "Distribution": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.Distribution"
+                    }
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Prefecture": {
+                    "type": "string"
+                },
+                "Province": {
+                    "type": "string"
+                },
+                "Town": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.Information": {
+            "title": "Information",
+            "type": "object",
+            "properties": {
+                "Content": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Kind": {
+                    "type": "string"
+                },
+                "State": {
+                    "type": "string"
+                },
+                "Time": {
+                    "type": "string",
+                    "format": "datetime"
+                },
+                "User1": {
+                    "$ref": "#/definitions/models.User"
+                },
+                "User2": {
+                    "$ref": "#/definitions/models.User"
+                }
+            }
+        },
+        "models.Logistics": {
+            "title": "Logistics",
+            "type": "object",
+            "properties": {
+                "AMoney": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "InFlow": {
+                    "type": "string"
+                },
+                "Time": {
+                    "type": "string",
+                    "format": "datetime"
+                },
+                "User": {
+                    "$ref": "#/definitions/models.User"
+                }
+            }
         },
         "models.Object": {
             "title": "Object",
@@ -306,16 +723,213 @@
                     "format": "int64"
                 }
             }
+        },
+        "models.Operation": {
+            "title": "Operation",
+            "type": "object",
+            "properties": {
+                "Admin": {
+                    "$ref": "#/definitions/models.Admin"
+                },
+                "Content": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Time": {
+                    "type": "string",
+                    "format": "datetime"
+                }
+            }
+        },
+        "models.OrderGoods": {
+            "title": "OrderGoods",
+            "type": "object",
+            "properties": {
+                "Count": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Goods": {
+                    "$ref": "#/definitions/models.Goods"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Order": {
+                    "$ref": "#/definitions/models.OrderInfo"
+                },
+                "Price": {
+                    "type": "number",
+                    "format": "double"
+                }
+            }
+        },
+        "models.OrderInfo": {
+            "title": "OrderInfo",
+            "type": "object",
+            "properties": {
+                "Address": {
+                    "$ref": "#/definitions/models.Address"
+                },
+                "CreateTime": {
+                    "type": "string",
+                    "format": "datetime"
+                },
+                "Distribution": {
+                    "$ref": "#/definitions/models.Distribution"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "OrderGoods": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.OrderGoods"
+                    }
+                },
+                "OrderStatus": {
+                    "type": "string"
+                },
+                "TotalCount": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "TotalPrice": {
+                    "type": "number",
+                    "format": "double"
+                }
+            }
+        },
+        "models.ShopCart": {
+            "title": "ShopCart",
+            "type": "object",
+            "properties": {
+                "Distribution": {
+                    "$ref": "#/definitions/models.Distribution"
+                },
+                "Good": {
+                    "$ref": "#/definitions/models.Goods"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Number": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Time": {
+                    "type": "string",
+                    "format": "datetime"
+                }
+            }
+        },
+        "models.Territory": {
+            "title": "Territory",
+            "type": "object",
+            "properties": {
+                "BigDistribution": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.BigDistribution"
+                    }
+                },
+                "Distribution": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.Distribution"
+                    }
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Introduce": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.User": {
+            "title": "User",
+            "type": "object",
+            "properties": {
+                "Admin": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.Admin"
+                    }
+                },
+                "BigDistribution": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.BigDistribution"
+                    }
+                },
+                "Distribution": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.Distribution"
+                    }
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Information": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.Information"
+                    }
+                },
+                "LastLoginIp": {
+                    "type": "string"
+                },
+                "LastLoginTime": {
+                    "type": "string",
+                    "format": "datetime"
+                },
+                "LoginNum": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Logistics": {
+                    "$ref": "#/definitions/models.Logistics"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "RegisterTime": {
+                    "type": "string",
+                    "format": "datetime"
+                },
+                "State": {
+                    "type": "string"
+                },
+                "Tele": {
+                    "type": "string"
+                }
+            }
         }
     },
     "tags": [
         {
-            "name": "object",
-            "description": "Operations about object\n"
+            "name": "goods",
+            "description": "operations for Goods\n"
         },
         {
-            "name": "user",
-            "description": "Operations about Users\n"
+            "name": "category",
+            "description": "operations for Category\n"
         }
     ]
 }

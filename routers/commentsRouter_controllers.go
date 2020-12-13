@@ -7,27 +7,67 @@ import (
 
 func init() {
 
-	beego.GlobalControllerRouter["zdshop/controllers:GoodsController"] = append(beego.GlobalControllerRouter["zdshop/controllers:GoodsController"],
+	beego.GlobalControllerRouter["zdshop/controllers:CategoryController"] = append(beego.GlobalControllerRouter["zdshop/controllers:CategoryController"],
 		beego.ControllerComments{
-			Method: "AddCategory",
-			Router: `/AddCategory`,
+			Method: "PostCategory",
+			Router: `/`,
 			AllowHTTPMethods: []string{"post"},
+			MethodParams: param.Make(),
+			Params: nil})
+
+	beego.GlobalControllerRouter["zdshop/controllers:CategoryController"] = append(beego.GlobalControllerRouter["zdshop/controllers:CategoryController"],
+		beego.ControllerComments{
+			Method: "GetFirstCategory",
+			Router: `/`,
+			AllowHTTPMethods: []string{"get"},
+			MethodParams: param.Make(),
+			Params: nil})
+
+	beego.GlobalControllerRouter["zdshop/controllers:CategoryController"] = append(beego.GlobalControllerRouter["zdshop/controllers:CategoryController"],
+		beego.ControllerComments{
+			Method: "DeleteCategory",
+			Router: `/:cid`,
+			AllowHTTPMethods: []string{"delete"},
+			MethodParams: param.Make(),
+			Params: nil})
+
+	beego.GlobalControllerRouter["zdshop/controllers:CategoryController"] = append(beego.GlobalControllerRouter["zdshop/controllers:CategoryController"],
+		beego.ControllerComments{
+			Method: "GetSecondCategory",
+			Router: `/:id`,
+			AllowHTTPMethods: []string{"get"},
 			MethodParams: param.Make(),
 			Params: nil})
 
 	beego.GlobalControllerRouter["zdshop/controllers:GoodsController"] = append(beego.GlobalControllerRouter["zdshop/controllers:GoodsController"],
 		beego.ControllerComments{
-			Method: "AddGoods",
-			Router: `/AddGoods`,
-			AllowHTTPMethods: []string{"post"},
+			Method: "UpdateCategory",
+			Router: `/`,
+			AllowHTTPMethods: []string{"put"},
 			MethodParams: param.Make(),
 			Params: nil})
 
 	beego.GlobalControllerRouter["zdshop/controllers:GoodsController"] = append(beego.GlobalControllerRouter["zdshop/controllers:GoodsController"],
 		beego.ControllerComments{
-			Method: "UpdateGoods",
-			Router: `/UpdateGoods`,
-			AllowHTTPMethods: []string{"post"},
+			Method: "GetAllGoods",
+			Router: `/:cid/:pageIndex`,
+			AllowHTTPMethods: []string{"get"},
+			MethodParams: param.Make(),
+			Params: nil})
+
+	beego.GlobalControllerRouter["zdshop/controllers:GoodsController"] = append(beego.GlobalControllerRouter["zdshop/controllers:GoodsController"],
+		beego.ControllerComments{
+			Method: "GetOneGoods",
+			Router: `/:gid`,
+			AllowHTTPMethods: []string{"get"},
+			MethodParams: param.Make(),
+			Params: nil})
+
+	beego.GlobalControllerRouter["zdshop/controllers:GoodsController"] = append(beego.GlobalControllerRouter["zdshop/controllers:GoodsController"],
+		beego.ControllerComments{
+			Method: "DeleteGoods",
+			Router: `/:gid`,
+			AllowHTTPMethods: []string{"delete"},
 			MethodParams: param.Make(),
 			Params: nil})
 
