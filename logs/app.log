@@ -51,3 +51,4 @@
 2020/12/13 21:24:01.417 [I] [category.go:166] 23 
 2020/12/13 21:24:01.419 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 09:24:01] "DELETE /v1/category/23 HTTP/1.1 200 0" 0.005982  PostmanRuntime/7.26.8
 
+2020/12/13 21:35:32.488 [I] [asm_amd64.s:1357] http server Running on http://:8080
