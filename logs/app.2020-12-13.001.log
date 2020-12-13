@@ -1,0 +1,90 @@
+2020/12/12 21:13:53.946 [I] [goods.go:437] Tex 
+2020/12/12 21:13:53.949 [I] [goods.go:440] 1 
+2020/12/12 21:13:53.949 [I] [goods.go:444] json.Unmarshal err:  json: cannot unmarshal number into Go value of type controllers.JsonGood 
+2020/12/12 21:13:53.950 [D] [server.go:2802] 127.0.0.1 - - [12/Dec/2020 09:13:53] "POST /v1/goods/tex HTTP/1.1 200 0" 0.003990  PostmanRuntime/7.26.8
+
+2020/12/12 21:14:11.712 [I] [goods.go:437] Tex 
+2020/12/12 21:14:11.718 [I] [goods.go:440] {
+    "Name":"tom",
+    "Arr": [
+        {
+            "Name1":"1",
+            "Price":2
+        },
+        {
+            "Name1":"2",
+            "Price":3
+        }
+    ]
+} 
+2020/12/12 21:14:11.726 [I] [goods.go:447] {tom [{1 2} {2 3}]} 
+2020/12/12 21:14:11.727 [I] [goods.go:448] tom 
+2020/12/12 21:14:11.729 [I] [goods.go:449] [{1 2} {2 3}] 
+2020/12/12 21:14:11.731 [I] [goods.go:452] 1 
+2020/12/12 21:14:11.731 [I] [goods.go:452] 2 
+2020/12/12 21:14:11.733 [D] [server.go:2802] 127.0.0.1 - - [12/Dec/2020 09:14:11] "POST /v1/goods/tex HTTP/1.1 200 0" 0.020944  PostmanRuntime/7.26.8
+
+2020/12/12 21:15:20.233 [I] [goods.go:437] Tex 
+2020/12/12 21:15:20.234 [I] [goods.go:440] {
+    "Name":"tom",
+    "Arr": [
+        {
+            "Name1":"1",
+            "Price":2
+        },
+        {
+            "Name1":"2",
+            "Price":3
+        }
+    ]
+} 
+2020/12/12 21:15:20.235 [I] [goods.go:447] {tom [{1 2} {2 3}]} 
+2020/12/12 21:15:20.235 [I] [goods.go:448] tom 
+2020/12/12 21:15:20.235 [I] [goods.go:449] [{1 2} {2 3}] 
+2020/12/12 21:15:20.236 [I] [goods.go:452] 1 
+2020/12/12 21:15:20.236 [I] [goods.go:452] 2 
+2020/12/12 21:15:20.236 [D] [server.go:2802] 127.0.0.1 - - [12/Dec/2020 09:15:20] "POST /v1/goods/tex HTTP/1.1 200 0" 0.002992  PostmanRuntime/7.26.8
+
+2020/12/12 21:15:35.220 [I] [goods.go:437] Tex 
+2020/12/12 21:15:35.220 [I] [goods.go:440] {
+    "Name":"Jack",
+    "Arr": [
+        {
+            "Name1":"1",
+            "Price":2
+        },
+        {
+            "Name1":"2",
+            "Price":3
+        }
+    ]
+} 
+2020/12/12 21:15:35.222 [I] [goods.go:447] {Jack [{1 2} {2 3}]} 
+2020/12/12 21:15:35.222 [I] [goods.go:448] Jack 
+2020/12/12 21:15:35.222 [I] [goods.go:449] [{1 2} {2 3}] 
+2020/12/12 21:15:35.222 [I] [goods.go:452] 1 
+2020/12/12 21:15:35.223 [I] [goods.go:452] 2 
+2020/12/12 21:15:35.223 [D] [server.go:2802] 127.0.0.1 - - [12/Dec/2020 09:15:35] "POST /v1/goods/tex HTTP/1.1 200 0" 0.003990  PostmanRuntime/7.26.8
+
+2020/12/12 21:18:40.640 [D] [server.go:2802] 192.168.0.105 - - [12/Dec/2020 09:18:40] "GET / HTTP/1.1 404 0" 0.000946  Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:83.0) Gecko/20100101 Firefox/83.0
+
+2020/12/12 21:18:41.041 [D] [server.go:2802] 192.168.0.105 - - [12/Dec/2020 09:18:41] "GET /favicon.ico HTTP/1.1 404 0" 0.001005 http://192.168.0.101:8080/ Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:83.0) Gecko/20100101 Firefox/83.0
+
+2020/12/12 21:18:44.368 [D] [server.go:2802] 192.168.0.105 - - [12/Dec/2020 09:18:44] "GET / HTTP/1.1 404 0" 0.000997 http://192.168.0.101:8080/ Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:83.0) Gecko/20100101 Firefox/83.0
+
+2020/12/12 21:18:45.206 [D] [server.go:2802] 192.168.0.105 - - [12/Dec/2020 09:18:45] "GET / HTTP/1.1 404 0" 0.000000 http://192.168.0.101:8080/ Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:83.0) Gecko/20100101 Firefox/83.0
+
+2020/12/12 21:19:10.748 [D] [server.go:2802] 192.168.0.105 - - [12/Dec/2020 09:19:10] "GET /swagger HTTP/1.1 302 0" 0.000000  Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:83.0) Gecko/20100101 Firefox/83.0
+
+2020/12/12 21:19:10.781 [D] [server.go:2802] 192.168.0.105 - - [12/Dec/2020 09:19:10] "GET /swagger/ HTTP/1.1 200 0" 0.000000  Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:83.0) Gecko/20100101 Firefox/83.0
+
+2020/12/12 21:19:10.893 [D] [server.go:2802] 192.168.0.105 - - [12/Dec/2020 09:19:10] "GET /swagger/swagger-ui.css HTTP/1.1 200 0" 0.003043 http://192.168.0.101:8080/swagger/ Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:83.0) Gecko/20100101 Firefox/83.0
+
+2020/12/12 21:19:11.186 [D] [server.go:2802] 192.168.0.105 - - [12/Dec/2020 09:19:10] "GET /swagger/swagger-ui-standalone-preset.js HTTP/1.1 200 0" 0.230386 http://192.168.0.101:8080/swagger/ Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:83.0) Gecko/20100101 Firefox/83.0
+
+2020/12/12 21:19:11.453 [D] [server.go:2802] 192.168.0.105 - - [12/Dec/2020 09:19:10] "GET /swagger/swagger-ui-bundle.js HTTP/1.1 200 0" 0.498692 http://192.168.0.101:8080/swagger/ Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:83.0) Gecko/20100101 Firefox/83.0
+
+2020/12/12 21:19:11.824 [D] [server.go:2802] 192.168.0.105 - - [12/Dec/2020 09:19:11] "GET /swagger/favicon-32x32.png HTTP/1.1 200 0" 0.009339 http://192.168.0.101:8080/swagger/ Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:83.0) Gecko/20100101 Firefox/83.0
+
+2020/12/12 21:19:11.834 [D] [server.go:2802] 192.168.0.105 - - [12/Dec/2020 09:19:11] "GET /swagger/swagger.json HTTP/1.1 200 0" 0.000718 http://192.168.0.101:8080/swagger/ Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:83.0) Gecko/20100101 Firefox/83.0
+

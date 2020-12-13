@@ -1,0 +1,101 @@
+2020/12/13 17:18:35.988 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 05:18:35] "POST /v1/category HTTP/1.1 200 0" 0.002992  PostmanRuntime/7.26.8
+
+2020/12/13 17:19:27.006 [I] [category.go:25] 请添加商品分类名称 
+2020/12/13 17:19:27.006 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 05:19:27] "POST /v1/category HTTP/1.1 200 0" 0.000000  PostmanRuntime/7.26.8
+
+2020/12/13 17:21:00.718 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 17:21:04.533 [I] [tools.go:43] 图片添加成功 
+2020/12/13 17:21:04.533 [I] [category.go:63] 图片添加成功 
+2020/12/13 17:21:04.535 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 05:21:04] "POST /v1/category HTTP/1.1 200 0" 0.005985  PostmanRuntime/7.26.8
+
+2020/12/13 18:02:47.948 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 18:10:38.312 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:10:38] "GET /v1/category/ HTTP/1.1 404 0" 0.000000  PostmanRuntime/7.26.8
+
+2020/12/13 18:10:59.749 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:10:59] "GET /v1/category/ HTTP/1.1 404 0" 0.000998  PostmanRuntime/7.26.8
+
+2020/12/13 18:11:09.866 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 18:11:18.721 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:11:18] "GET /v1/category/ HTTP/1.1 200 0" 0.003990  PostmanRuntime/7.26.8
+
+2020/12/13 18:12:29.356 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 18:12:51.508 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 18:12:55.778 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:12:55] "GET /v1/category/ HTTP/1.1 200 0" 0.004026  PostmanRuntime/7.26.8
+
+2020/12/13 18:13:32.081 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 18:14:02.215 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:14:02] "GET /v1/category/1 HTTP/1.1 404 0" 0.000000  PostmanRuntime/7.26.8
+
+2020/12/13 18:14:13.894 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:14:13] "GET /swagger/ HTTP/1.1 304 0" 0.001001  Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3823.400 QQBrowser/10.7.4307.400
+
+2020/12/13 18:14:13.912 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:14:13] "GET /swagger/swagger-ui.css HTTP/1.1 304 0" 0.000998 http://127.0.0.1:8080/swagger/ Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3823.400 QQBrowser/10.7.4307.400
+
+2020/12/13 18:14:13.917 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:14:13] "GET /swagger/swagger-ui-bundle.js HTTP/1.1 304 0" 0.004986 http://127.0.0.1:8080/swagger/ Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3823.400 QQBrowser/10.7.4307.400
+
+2020/12/13 18:14:13.919 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:14:13] "GET /swagger/swagger-ui-standalone-preset.js HTTP/1.1 304 0" 0.006984 http://127.0.0.1:8080/swagger/ Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3823.400 QQBrowser/10.7.4307.400
+
+2020/12/13 18:14:14.230 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:14:14] "GET /swagger/swagger.json HTTP/1.1 200 0" 0.000000 http://127.0.0.1:8080/swagger/ Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3823.400 QQBrowser/10.7.4307.400
+
+2020/12/13 18:14:46.750 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:14:46] "GET /v1/category/1 HTTP/1.1 404 0" 0.000000  PostmanRuntime/7.26.8
+
+2020/12/13 18:15:19.924 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:15:19] "GET /v1/category/1 HTTP/1.1 404 0" 0.000000  PostmanRuntime/7.26.8
+
+2020/12/13 18:15:29.202 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 18:15:45.116 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:15:45] "GET /v1/category/1 HTTP/1.1 404 0" 0.000998  PostmanRuntime/7.26.8
+
+2020/12/13 18:15:58.698 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:15:58] "GET /v1/category/1 HTTP/1.1 404 0" 0.000997  PostmanRuntime/7.26.8
+
+2020/12/13 18:16:18.603 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 18:16:30.111 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:16:30] "GET /v1/category/ HTTP/1.1 200 0" 0.001995  PostmanRuntime/7.26.8
+
+2020/12/13 18:17:10.030 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:17:10] "GET /v1/category/1 HTTP/1.1 404 0" 0.000999  PostmanRuntime/7.26.8
+
+2020/12/13 18:17:15.595 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:17:15] "GET /v1/category/1 HTTP/1.1 404 0" 0.000000  PostmanRuntime/7.26.8
+
+2020/12/13 18:17:54.435 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 18:19:13.759 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:19:13] "GET /v1/category/1 HTTP/1.1 404 0" 0.000000  PostmanRuntime/7.26.8
+
+2020/12/13 18:19:35.505 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:19:35] "GET /v1/category/1 HTTP/1.1 404 0" 0.000000  PostmanRuntime/7.26.8
+
+2020/12/13 18:20:01.284 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 18:20:05.848 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:20:05] "GET /v1/category/1 HTTP/1.1 404 0" 0.000000  PostmanRuntime/7.26.8
+
+2020/12/13 18:20:09.150 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:20:09] "GET /v1/category/1 HTTP/1.1 404 0" 0.000000  PostmanRuntime/7.26.8
+
+2020/12/13 18:22:00.108 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 18:22:08.296 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:22:08] "GET /v1/category/1 HTTP/1.1 404 0" 0.000996  PostmanRuntime/7.26.8
+
+2020/12/13 18:22:11.664 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:22:11] "GET /v1/category/1 HTTP/1.1 404 0" 0.000000  PostmanRuntime/7.26.8
+
+2020/12/13 18:23:01.551 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 18:23:01.764 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:23:01] "GET /swagger/ HTTP/1.1 304 0" 0.001963  Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3823.400 QQBrowser/10.7.4307.400
+
+2020/12/13 18:23:02.092 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:23:02] "GET /swagger/swagger.json HTTP/1.1 200 0" 0.000000 http://127.0.0.1:8080/swagger/ Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3823.400 QQBrowser/10.7.4307.400
+
+2020/12/13 18:23:32.717 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:23:32] "GET /v1/category/1 HTTP/1.1 200 0" 0.007987  PostmanRuntime/7.26.8
+
+2020/12/13 18:24:05.854 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 18:24:08.537 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:24:08] "GET /v1/category/1 HTTP/1.1 200 0" 0.003989  PostmanRuntime/7.26.8
+
+2020/12/13 18:25:17.936 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 18:25:35.982 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 18:26:09.084 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 18:27:18.370 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:27:18] "GET /v1/category/1 HTTP/1.1 200 0" 0.001993  PostmanRuntime/7.26.8
+
+2020/12/13 18:27:58.643 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:27:58] "GET /v1/category/ HTTP/1.1 200 0" 0.000996  PostmanRuntime/7.26.8
+
+2020/12/13 18:47:49.520 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 18:47:59.886 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:47:59] "GET /swagger/ HTTP/1.1 304 0" 0.000998  Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3823.400 QQBrowser/10.7.4307.400
+
+2020/12/13 18:48:00.292 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:48:00] "GET /swagger/swagger.json HTTP/1.1 200 0" 0.001033 http://127.0.0.1:8080/swagger/ Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3823.400 QQBrowser/10.7.4307.400
+
+2020/12/13 18:49:45.307 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:49:45] "DELETE /v1/category/5 HTTP/1.1 404 0" 0.003990  PostmanRuntime/7.26.8
+
+2020/12/13 18:50:51.845 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:50:51] "DELETE /v1/category/5 HTTP/1.1 404 0" 0.000000  PostmanRuntime/7.26.8
+
+2020/12/13 18:52:54.324 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 18:53:19.574 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:53:19] "DELETE /v1/category/5 HTTP/1.1 200 0" 0.003990  PostmanRuntime/7.26.8
+
+2020/12/13 18:53:29.993 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:53:29] "DELETE /v1/category/5 HTTP/1.1 200 0" 0.000000  PostmanRuntime/7.26.8
+
+2020/12/13 18:54:55.424 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:54:55] "DELETE /v1/category/ HTTP/1.1 404 0" 0.000994  PostmanRuntime/7.26.8
+
+2020/12/13 18:55:01.937 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 06:55:01] "DELETE /v1/category/5 HTTP/1.1 200 0" 0.000998  PostmanRuntime/7.26.8
+

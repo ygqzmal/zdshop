@@ -1,0 +1,100 @@
+2020/12/13 20:50:25.358 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 08:50:25] "POST /v1/category/ HTTP/1.1 200 0" 0.000997  PostmanRuntime/7.26.8
+
+2020/12/13 20:51:09.531 [I] [category.go:27] 请添加商品分类名称 
+2020/12/13 20:51:09.531 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 08:51:09] "POST /v1/category/ HTTP/1.1 200 0" 0.000000  PostmanRuntime/7.26.8
+
+2020/12/13 20:51:16.844 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 20:51:21.319 [I] [category.go:27] 请添加商品分类名称 
+2020/12/13 20:51:21.319 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 08:51:21] "POST /v1/category/ HTTP/1.1 200 0" 0.000000  PostmanRuntime/7.26.8
+
+2020/12/13 20:51:50.694 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 20:52:03.026 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 08:52:03] "POST /v1/category HTTP/1.1 200 0" 0.002003  PostmanRuntime/7.26.8
+
+2020/12/13 20:52:23.863 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 08:52:23] "POST /v1/category HTTP/1.1 200 0" 0.000997  PostmanRuntime/7.26.8
+
+2020/12/13 20:52:37.157 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 08:52:37] "POST /v1/category HTTP/1.1 200 0" 0.001959  PostmanRuntime/7.26.8
+
+2020/12/13 20:52:48.266 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 08:52:48] "POST /v1/category HTTP/1.1 200 0" 0.006983  PostmanRuntime/7.26.8
+
+2020/12/13 20:52:53.154 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 08:52:53] "POST /v1/category HTTP/1.1 200 0" 0.004986  PostmanRuntime/7.26.8
+
+2020/12/13 20:52:57.932 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 08:52:57] "POST /v1/category HTTP/1.1 200 0" 0.003989  PostmanRuntime/7.26.8
+
+2020/12/13 20:54:05.612 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 08:54:05] "POST /v1/category/15 HTTP/1.1 404 0" 0.002989  PostmanRuntime/7.26.8
+
+2020/12/13 20:54:25.587 [I] [category.go:169] delete 
+2020/12/13 20:54:25.589 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 08:54:25] "DELETE /v1/category/15 HTTP/1.1 200 0" 0.005986  PostmanRuntime/7.26.8
+
+2020/12/13 20:55:01.117 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 20:55:34.092 [I] [category.go:150] 该分类名称不存在 
+2020/12/13 20:55:34.092 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 08:55:34] "DELETE /v1/category/15 HTTP/1.1 200 0" 0.002993  PostmanRuntime/7.26.8
+
+2020/12/13 20:55:49.627 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 08:55:49] "POST /v1/category/15 HTTP/1.1 404 0" 0.002990  PostmanRuntime/7.26.8
+
+2020/12/13 20:55:54.960 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 08:55:54] "POST /v1/category/ HTTP/1.1 200 0" 0.003989  PostmanRuntime/7.26.8
+
+2020/12/13 20:56:03.099 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 08:56:03] "POST /v1/category/ HTTP/1.1 200 0" 0.005984  PostmanRuntime/7.26.8
+
+2020/12/13 20:56:07.492 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 08:56:07] "POST /v1/category/ HTTP/1.1 200 0" 0.003989  PostmanRuntime/7.26.8
+
+2020/12/13 20:56:42.135 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 08:56:42] "DELETE /v1/category/18 HTTP/1.1 200 0" 0.011968  PostmanRuntime/7.26.8
+
+2020/12/13 20:56:54.600 [I] [category.go:168] delete 
+2020/12/13 20:56:54.602 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 08:56:54] "DELETE /v1/category/12 HTTP/1.1 200 0" 0.007978  PostmanRuntime/7.26.8
+
+2020/12/13 20:57:47.619 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 20:57:55.707 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 08:57:55] "POST /v1/category/12 HTTP/1.1 404 0" 0.001997  PostmanRuntime/7.26.8
+
+2020/12/13 20:58:00.845 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 08:58:00] "POST /v1/category/ HTTP/1.1 200 0" 0.009973  PostmanRuntime/7.26.8
+
+2020/12/13 20:58:05.987 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 08:58:05] "POST /v1/category/ HTTP/1.1 200 0" 0.004989  PostmanRuntime/7.26.8
+
+2020/12/13 20:58:10.133 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 08:58:10] "POST /v1/category/ HTTP/1.1 200 0" 0.003990  PostmanRuntime/7.26.8
+
+2020/12/13 20:58:31.895 [I] [category.go:167] delete 
+2020/12/13 20:58:31.897 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 08:58:31] "DELETE /v1/category/11 HTTP/1.1 200 0" 0.006980  PostmanRuntime/7.26.8
+
+2020/12/13 21:01:11.587 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 21:01:40.090 [I] [category.go:27] 请添加商品分类名称 
+2020/12/13 21:01:40.091 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 09:01:40] "POST /v1/category/ HTTP/1.1 200 0" 0.000999  PostmanRuntime/7.26.8
+
+2020/12/13 21:01:52.294 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 09:01:52] "POST /v1/category/ HTTP/1.1 200 0" 0.001995  PostmanRuntime/7.26.8
+
+2020/12/13 21:01:56.435 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 09:01:56] "POST /v1/category/ HTTP/1.1 200 0" 0.000998  PostmanRuntime/7.26.8
+
+2020/12/13 21:01:59.457 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 09:01:59] "POST /v1/category/ HTTP/1.1 200 0" 0.000998  PostmanRuntime/7.26.8
+
+2020/12/13 21:02:43.329 [I] [category.go:167] delete 
+2020/12/13 21:02:43.331 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 09:02:43] "DELETE /v1/category/24 HTTP/1.1 200 0" 0.008978  PostmanRuntime/7.26.8
+
+2020/12/13 21:03:15.038 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 09:03:15] "POST /v1/category/ HTTP/1.1 200 0" 0.000997  PostmanRuntime/7.26.8
+
+2020/12/13 21:03:17.823 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 09:03:17] "POST /v1/category/ HTTP/1.1 200 0" 0.000996  PostmanRuntime/7.26.8
+
+2020/12/13 21:03:20.351 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 09:03:20] "POST /v1/category/ HTTP/1.1 200 0" 0.000998  PostmanRuntime/7.26.8
+
+2020/12/13 21:04:47.890 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 21:06:02.335 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 21:06:10.399 [I] [category.go:38] 该分类名称已经存在, 请勿重复添加 
+2020/12/13 21:06:10.399 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 09:06:10] "POST /v1/category/ HTTP/1.1 200 0" 0.000998  PostmanRuntime/7.26.8
+
+2020/12/13 21:06:38.472 [I] [category.go:158] 0 
+2020/12/13 21:06:38.473 [I] [category.go:168] delete 
+2020/12/13 21:06:38.475 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 09:06:38] "DELETE /v1/category/27 HTTP/1.1 200 0" 0.005939  PostmanRuntime/7.26.8
+
+2020/12/13 21:07:51.200 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 09:07:51] "POST /v1/category/ HTTP/1.1 200 0" 0.000998  PostmanRuntime/7.26.8
+
+2020/12/13 21:08:17.834 [I] [category.go:158] 0 
+2020/12/13 21:08:17.835 [I] [category.go:168] delete 
+2020/12/13 21:08:17.837 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 09:08:17] "DELETE /v1/category/28 HTTP/1.1 200 0" 0.005983  PostmanRuntime/7.26.8
+
+2020/12/13 21:09:13.863 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 21:09:20.082 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 09:09:20] "POST /v1/category/ HTTP/1.1 200 0" 0.001995  PostmanRuntime/7.26.8
+
+2020/12/13 21:09:46.087 [I] [category.go:158] 0 
+2020/12/13 21:09:46.088 [I] [category.go:168] delete 
+2020/12/13 21:09:46.088 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 09:09:46] "DELETE /v1/category/28 HTTP/1.1 200 0" 0.003986  PostmanRuntime/7.26.8
+
+2020/12/13 21:10:19.144 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 09:10:19] "POST /v1/category/ HTTP/1.1 200 0" 0.001994  PostmanRuntime/7.26.8
+
+2020/12/13 21:10:22.812 [I] [asm_amd64.s:1357] http server Running on http://:8080

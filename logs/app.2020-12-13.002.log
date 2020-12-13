@@ -1,0 +1,104 @@
+2020/12/13 16:02:23.294 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 16:07:16.652 [I] [category.go:24] 请添加商品分类名称 
+2020/12/13 16:07:16.652 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 04:07:16] "POST /v1/category/ HTTP/1.1 200 0" 0.000000  PostmanRuntime/7.26.8
+
+2020/12/13 16:07:57.965 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 04:07:57] "POST /v1/category/ HTTP/1.1 200 0" 0.005978  PostmanRuntime/7.26.8
+
+2020/12/13 16:08:52.600 [I] [category.go:35] 该分类名称已经存在, 请勿重复添加 
+2020/12/13 16:08:52.601 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 04:08:52] "POST /v1/category/ HTTP/1.1 200 0" 0.001997  PostmanRuntime/7.26.8
+
+2020/12/13 16:09:32.697 [I] [category.go:60] 1 
+2020/12/13 16:09:32.697 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 04:09:32] "POST /v1/category/ HTTP/1.1 200 0" 0.000996  PostmanRuntime/7.26.8
+
+2020/12/13 16:09:36.766 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 04:09:36] "POST /v1/category/ HTTP/1.1 200 0" 0.000000  PostmanRuntime/7.26.8
+
+2020/12/13 16:09:47.689 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 04:09:47] "POST /v1/category/ HTTP/1.1 200 0" 0.000935  PostmanRuntime/7.26.8
+
+2020/12/13 16:18:24.363 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 16:18:48.762 [C] [panic.go:679] the request url is  /v1/category/
+2020/12/13 16:18:48.763 [C] [panic.go:679] Handler crashed with error runtime error: invalid memory address or nil pointer dereference
+2020/12/13 16:18:48.763 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/panic.go:679
+2020/12/13 16:18:48.763 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/panic.go:199
+2020/12/13 16:18:48.763 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/signal_windows.go:233
+2020/12/13 16:18:48.763 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/controller.go:512
+2020/12/13 16:18:48.764 [C] [panic.go:679] D:/Go/awesomeProject/src/zdshop/controllers/category.go:59
+2020/12/13 16:18:48.764 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/reflect/value.go:460
+2020/12/13 16:18:48.764 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/reflect/value.go:321
+2020/12/13 16:18:48.764 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/router.go:847
+2020/12/13 16:18:48.764 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/net/http/server.go:2802
+2020/12/13 16:18:48.765 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/net/http/server.go:1890
+2020/12/13 16:18:48.765 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/asm_amd64.s:1357
+2020/12/13 16:18:48.765 [server.go:3054] [HTTP] http: superfluous response.WriteHeader call from github.com/astaxie/beego/context.(*Response).WriteHeader (context.go:221)
+2020/12/13 16:21:01.267 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 16:21:02.438 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 16:59:03.982 [C] [panic.go:679] the request url is  /v1/category/
+2020/12/13 16:59:03.983 [C] [panic.go:679] Handler crashed with error runtime error: invalid memory address or nil pointer dereference
+2020/12/13 16:59:03.983 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/panic.go:679
+2020/12/13 16:59:03.984 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/panic.go:199
+2020/12/13 16:59:03.984 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/signal_windows.go:233
+2020/12/13 16:59:03.984 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/controller.go:512
+2020/12/13 16:59:03.984 [C] [panic.go:679] D:/Go/awesomeProject/src/zdshop/controllers/category.go:60
+2020/12/13 16:59:03.985 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/reflect/value.go:460
+2020/12/13 16:59:03.985 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/reflect/value.go:321
+2020/12/13 16:59:03.985 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/router.go:847
+2020/12/13 16:59:03.986 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/net/http/server.go:2802
+2020/12/13 16:59:03.986 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/net/http/server.go:1890
+2020/12/13 16:59:03.986 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/asm_amd64.s:1357
+2020/12/13 16:59:03.987 [server.go:3054] [HTTP] http: superfluous response.WriteHeader call from github.com/astaxie/beego/context.(*Response).WriteHeader (context.go:221)
+2020/12/13 17:01:04.309 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 17:01:07.111 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 05:01:07] "POST /v1/category/ HTTP/1.1 200 0" 0.000997  PostmanRuntime/7.26.8
+
+2020/12/13 17:02:49.049 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 17:02:51.179 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 17:02:53.328 [I] [category.go:36] 该分类名称已经存在, 请勿重复添加 
+2020/12/13 17:02:53.329 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 05:02:53] "POST /v1/category/ HTTP/1.1 200 0" 0.001003  PostmanRuntime/7.26.8
+
+2020/12/13 17:03:07.483 [C] [panic.go:679] the request url is  /v1/category/
+2020/12/13 17:03:07.487 [C] [panic.go:679] Handler crashed with error runtime error: invalid memory address or nil pointer dereference
+2020/12/13 17:03:07.488 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/panic.go:679
+2020/12/13 17:03:07.488 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/panic.go:199
+2020/12/13 17:03:07.488 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/signal_windows.go:233
+2020/12/13 17:03:07.488 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/controller.go:512
+2020/12/13 17:03:07.488 [C] [panic.go:679] D:/Go/awesomeProject/src/zdshop/controllers/category.go:60
+2020/12/13 17:03:07.488 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/reflect/value.go:460
+2020/12/13 17:03:07.489 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/reflect/value.go:321
+2020/12/13 17:03:07.491 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/router.go:847
+2020/12/13 17:03:07.494 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/net/http/server.go:2802
+2020/12/13 17:03:07.494 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/net/http/server.go:1890
+2020/12/13 17:03:07.494 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/asm_amd64.s:1357
+2020/12/13 17:03:07.494 [server.go:3054] [HTTP] http: superfluous response.WriteHeader call from github.com/astaxie/beego/context.(*Response).WriteHeader (context.go:221)
+2020/12/13 17:03:45.182 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 17:04:25.847 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 17:04:47.921 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 17:10:22.350 [C] [panic.go:679] the request url is  /v1/category/
+2020/12/13 17:10:22.351 [C] [panic.go:679] Handler crashed with error runtime error: invalid memory address or nil pointer dereference
+2020/12/13 17:10:22.351 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/panic.go:679
+2020/12/13 17:10:22.352 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/panic.go:199
+2020/12/13 17:10:22.352 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/signal_windows.go:233
+2020/12/13 17:10:22.352 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/controller.go:512
+2020/12/13 17:10:22.352 [C] [panic.go:679] D:/Go/awesomeProject/src/zdshop/controllers/category.go:60
+2020/12/13 17:10:22.352 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/reflect/value.go:460
+2020/12/13 17:10:22.352 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/reflect/value.go:321
+2020/12/13 17:10:22.353 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/router.go:847
+2020/12/13 17:10:22.353 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/net/http/server.go:2802
+2020/12/13 17:10:22.353 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/net/http/server.go:1890
+2020/12/13 17:10:22.353 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/asm_amd64.s:1357
+2020/12/13 17:10:22.354 [server.go:3054] [HTTP] http: superfluous response.WriteHeader call from github.com/astaxie/beego/context.(*Response).WriteHeader (context.go:221)
+2020/12/13 17:13:41.105 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 17:14:13.243 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 17:14:45.931 [I] [category.go:25] 请添加商品分类名称 
+2020/12/13 17:14:45.932 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 05:14:45] "POST /v1/category/ HTTP/1.1 200 0" 0.009972  PostmanRuntime/7.26.8
+
+2020/12/13 17:15:35.863 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2020/12/13 17:17:20.718 [I] [category.go:25] 请添加商品分类名称 
+2020/12/13 17:17:20.719 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 05:17:20] "POST /v1/category/ HTTP/1.1 200 0" 0.002992  PostmanRuntime/7.26.8
+
+2020/12/13 17:17:49.245 [I] [category.go:25] 请添加商品分类名称 
+2020/12/13 17:17:49.245 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 05:17:49] "POST /v1/category/ HTTP/1.1 200 0" 0.001992  PostmanRuntime/7.26.8
+
+2020/12/13 17:18:09.279 [I] [category.go:25] 请添加商品分类名称 
+2020/12/13 17:18:09.280 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 05:18:09] "POST /v1/category HTTP/1.1 200 0" 0.001994  PostmanRuntime/7.26.8
+
+2020/12/13 17:18:14.381 [I] [category.go:25] 请添加商品分类名称 
+2020/12/13 17:18:14.382 [D] [server.go:2802] 127.0.0.1 - - [13/Dec/2020 05:18:14] "POST /v1/category HTTP/1.1 200 0" 0.002992  PostmanRuntime/7.26.8
+

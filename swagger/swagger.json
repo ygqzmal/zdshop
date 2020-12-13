@@ -15,42 +15,33 @@
     },
     "basePath": "/v1",
     "paths": {
-        "/goods/": {
+        "/category/": {
+            "get": {
+                "tags": [
+                    "category"
+                ],
+                "description": "获取一级分类",
+                "operationId": "CategoryController.Get First",
+                "responses": {
+                    "200": {
+                        "description": "{string} 成功"
+                    },
+                    "400": {
+                        "description": "失败"
+                    }
+                }
+            },
             "post": {
                 "tags": [
-                    "goods"
+                    "category"
                 ],
-                "description": "AddGoods and AddGoodsParameter and AddGoodsBanner",
-                "operationId": "GoodsController.Post",
+                "description": "add category",
+                "operationId": "CategoryController.Post",
                 "parameters": [
                     {
                         "in": "formData",
                         "name": "name",
-                        "description": "商品名称",
-                        "schema": {
-                            "$ref": "#/definitions/.true"
-                        }
-                    },
-                    {
-                        "in": "formData",
-                        "name": "brief",
-                        "description": "商品简介",
-                        "schema": {
-                            "$ref": "#/definitions/.true"
-                        }
-                    },
-                    {
-                        "in": "formData",
-                        "name": "state",
-                        "description": "商品状态 0-上架 1-下架",
-                        "schema": {
-                            "$ref": "#/definitions/.true"
-                        }
-                    },
-                    {
-                        "in": "formData",
-                        "name": "explain",
-                        "description": "商品说明",
+                        "description": "分类名称",
                         "schema": {
                             "$ref": "#/definitions/.true"
                         }
@@ -58,7 +49,42 @@
                     {
                         "in": "formData",
                         "name": "categoryId",
-                        "description": "商品分类id",
+                        "description": "分类名称",
+                        "schema": {
+                            "$ref": "#/definitions/.false"
+                        }
+                    },
+                    {
+                        "in": "formData",
+                        "name": "image",
+                        "description": "分类名称",
+                        "schema": {
+                            "$ref": "#/definitions/.false"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} 分类添加成功"
+                    },
+                    "400": {
+                        "description": "分类添加失败"
+                    }
+                }
+            }
+        },
+        "/category/{cid}": {
+            "delete": {
+                "tags": [
+                    "category"
+                ],
+                "description": "删除某个分类",
+                "operationId": "CategoryController.Delete Category",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "cid",
+                        "description": "分类id",
                         "schema": {
                             "$ref": "#/definitions/.true"
                         }
@@ -66,25 +92,87 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "{string} 商品添加成功"
+                        "description": "{string} 成功"
                     },
                     "400": {
-                        "description": "商品添加失败"
+                        "description": "失败"
                     }
                 }
             }
         },
-        "/goods/id": {
+        "/category/{id}": {
+            "get": {
+                "tags": [
+                    "category"
+                ],
+                "description": "根据一级分类id获取二级级分类",
+                "operationId": "CategoryController.Get Second",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "name",
+                        "description": "分类id",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} 成功"
+                    },
+                    "400": {
+                        "description": "失败"
+                    }
+                }
+            }
+        },
+        "/goods/": {
             "put": {
                 "tags": [
                     "goods"
                 ],
-                "description": "UpdateGoods",
-                "operationId": "GoodsController.Update",
+                "description": "修改某个分类名字",
+                "operationId": "GoodsController.Put Category",
                 "parameters": [
                     {
-                        "in": "pwd",
+                        "in": "formDate",
+                        "name": "cid",
+                        "description": "分类id",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    },
+                    {
+                        "in": "formDate",
                         "name": "name",
+                        "description": "分类名称",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} 成功"
+                    },
+                    "400": {
+                        "description": "失败"
+                    }
+                }
+            }
+        },
+        "/goods/tex": {
+            "post": {
+                "tags": [
+                    "goods"
+                ],
+                "description": "Tex",
+                "operationId": "GoodsController.Tex",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "gid",
                         "description": "body for user content",
                         "schema": {
                             "$ref": "#/definitions/.true"
@@ -93,7 +181,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "{string} 修改商品成功"
+                        "description": "{string} ok"
                     },
                     "403": {
                         "description": "lost data"
@@ -164,9 +252,7 @@
                         "description": "lost data"
                     }
                 }
-            }
-        },
-        "/goods/{id}": {
+            },
             "delete": {
                 "tags": [
                     "goods"
@@ -175,8 +261,8 @@
                 "operationId": "GoodsController.Delete",
                 "parameters": [
                     {
-                        "in": "pwd",
-                        "name": "username",
+                        "in": "path",
+                        "name": "gid",
                         "description": "body for user content",
                         "schema": {
                             "$ref": "#/definitions/.true"
@@ -240,7 +326,8 @@
                     "format": "int64"
                 },
                 "IsDefault": {
-                    "type": "string"
+                    "type": "integer",
+                    "format": "int64"
                 },
                 "Name": {
                     "type": "string"
@@ -261,16 +348,20 @@
             "type": "object",
             "properties": {
                 "AccordAuthority": {
-                    "type": "string"
+                    "type": "integer",
+                    "format": "int64"
                 },
                 "CapitalAuthority": {
-                    "type": "string"
+                    "type": "integer",
+                    "format": "int64"
                 },
                 "DistributorAuthority": {
-                    "type": "string"
+                    "type": "integer",
+                    "format": "int64"
                 },
                 "GoodsAuthority": {
-                    "type": "string"
+                    "type": "integer",
+                    "format": "int64"
                 },
                 "Id": {
                     "type": "integer",
@@ -280,7 +371,8 @@
                     "type": "string"
                 },
                 "MessageAuthority": {
-                    "type": "string"
+                    "type": "integer",
+                    "format": "int64"
                 },
                 "Operation": {
                     "type": "array",
@@ -289,7 +381,8 @@
                     }
                 },
                 "OrderAuthority": {
-                    "type": "string"
+                    "type": "integer",
+                    "format": "int64"
                 },
                 "Role": {
                     "type": "string"
@@ -366,7 +459,8 @@
                     }
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "integer",
+                    "format": "int64"
                 },
                 "User": {
                     "$ref": "#/definitions/models.User"
@@ -403,7 +497,8 @@
                     }
                 },
                 "GoodsState": {
-                    "type": "string"
+                    "type": "integer",
+                    "format": "int64"
                 },
                 "Id": {
                     "type": "integer",
@@ -449,7 +544,8 @@
                     "format": "int64"
                 },
                 "IsDefault": {
-                    "type": "string"
+                    "type": "integer",
+                    "format": "int64"
                 }
             }
         },
@@ -457,6 +553,10 @@
             "title": "GoodsCategory",
             "type": "object",
             "properties": {
+                "CreateTime": {
+                    "type": "string",
+                    "format": "datetime"
+                },
                 "Goods": {
                     "type": "array",
                     "items": {
@@ -467,6 +567,9 @@
                     "type": "integer",
                     "format": "int64"
                 },
+                "Image": {
+                    "type": "string"
+                },
                 "Name": {
                     "type": "string"
                 },
@@ -474,9 +577,9 @@
                     "type": "integer",
                     "format": "int64"
                 },
-                "ShowIndex": {
-                    "type": "integer",
-                    "format": "int64"
+                "UpdateTime": {
+                    "type": "string",
+                    "format": "datetime"
                 }
             }
         },
@@ -504,7 +607,8 @@
                     "format": "int64"
                 },
                 "IsDefault": {
-                    "type": "string"
+                    "type": "integer",
+                    "format": "int64"
                 },
                 "Parameter": {
                     "type": "string"
@@ -822,6 +926,10 @@
         {
             "name": "goods",
             "description": "operations for Goods\n"
+        },
+        {
+            "name": "category",
+            "description": "operations for Category\n"
         }
     ]
 }

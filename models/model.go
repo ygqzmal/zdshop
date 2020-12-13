@@ -27,7 +27,7 @@ type User struct {
 //资金流动表
 type Logistics struct {
 	Id          int
-	User        *User     `orm:"rel(one)"`                      //用户Id
+	User        *User     `orm:"rel(one);cascade"`              //用户Id
 	Time        time.Time `orm:"auto_now;type(datetime)"`       //流动时间
 	InFlow      string    `orm:"size(1);type(char);default(0)"` //资金流动判断 0-进账 1-出账
 	AMoney      float64   `orm:"default(0)"`                    //流动金额
@@ -37,8 +37,8 @@ type Logistics struct {
 //信息表
 type Information struct {
 	Id      int
-	User1   *User     `orm:"rel(fk)"`                       //发信人id-用户表的外键
-	User2   *User     `orm:"rel(fk)"`                       //收信人id-用户表的外键
+	User1   *User     `orm:"rel(fk);cascade"`               //发信人id-用户表的外键
+	User2   *User     `orm:"rel(fk);cascade"`               //收信人id-用户表的外键
 	Time    time.Time `orm:"auto_now_add"`                  //发信时间
 	Content string    `orm:"size(100)"`                     //发信内容
 	Kind    string    `orm:"size(1);type(char);default(0)"` //0-普通的聊天消息 1-订单状态该别消息 2-通知消息
@@ -48,24 +48,24 @@ type Information struct {
 //管理员表
 type Admin struct {
 	Id                   int          //管理员Id
-	User                 *User        `orm:"rel(fk);unique"`                //用户Id-用户表外键
+	User                 *User        `orm:"rel(fk);unique;cascade"`        //用户Id-用户表外键
 	Role                 string       `orm:"size(1);type(char);default(1)"` //分总管理员		0-总管理员 1-分管理员
 	JobPosition          string       `orm:"size(20);default(普通员工)"`        //管理员职位备注
-	GoodsAuthority       string       `orm:"size(1);type(char);default(0)"` //商品权限	  	0-没有权限 1-可查看权限 2-可操作商品数据权限
-	OrderAuthority       string       `orm:"size(1);type(char);default(0)"` //订单权限   	0-没有权限 1-可查看权限 2-可操作商品数据权限
-	DistributorAuthority string       `orm:"size(1);type(char);default(0)"` //分销权限   	0-没有权限 1-可查看权限 2-可操作商品数据权限
-	CapitalAuthority     string       `orm:"size(1);type(char);default(0)"` //资金权限		0-没有权限 1-可查看权限
-	MessageAuthority     string       `orm:"size(1);type(char);default(0)"` //消息权限		0-没有权限 1-可查看权限
-	AccordAuthority      string       `orm:"size(1);type(char);default(0)"` //协议管理		0-没有权限 1-可查看权限 2-可操作商品数据权限
+	GoodsAuthority       int          `orm:"default(0)"`                    //商品权限	  	0-没有权限 1-可查看权限 2-可操作商品数据权限
+	OrderAuthority       int          `orm:"default(0)"`                    //订单权限   	0-没有权限 1-可查看权限 2-可操作商品数据权限
+	DistributorAuthority int          `orm:"default(0)"`                    //分销权限   	0-没有权限 1-可查看权限 2-可操作商品数据权限
+	CapitalAuthority     int          `orm:"default(0)"`                    //资金权限		0-没有权限 1-可查看权限
+	MessageAuthority     int          `orm:"default(0)"`                    //消息权限		0-没有权限 1-可查看权限
+	AccordAuthority      int          `orm:"default(0)"`                    //协议管理		0-没有权限 1-可查看权限 2-可操作商品数据权限
 	Operation            []*Operation `orm:"reverse(many)"`
 }
 
 //管理员操作表
 type Operation struct {
 	Id      int
-	Admin   *Admin    `orm:"rel(fk)"`   //管理员-管理员表外键
-	Time    time.Time `orm:"auto_now"`  //操作时间
-	Content string    `orm:"size(100)"` //操作内容
+	Admin   *Admin    `orm:"rel(fk);cascade"` //管理员-管理员表外键
+	Time    time.Time `orm:"auto_now"`        //操作时间
+	Content string    `orm:"size(100)"`       //操作内容
 }
 
 //领域表
@@ -80,12 +80,12 @@ type Territory struct {
 //总经销商表
 type BigDistribution struct {
 	Id        int
-	User      *User      `orm:"rel(fk);unique"`     //用户Id-用户表外键
-	AdTer     *Territory `orm:"rel(fk)"`            //管辖领域-领域表外键
-	AdGrade   string     `orm:"size(1);type(char)"` //管辖等级 0-国级 1-省级 2-市级 3-县级
-	AsLocal   *HoldLocal `orm:"rel(fk)"`            //管辖地-管辖地表外键
-	Money     float64    `orm:"default(0)"`         //资金总额
-	UserMoney float64    `orm:"default(0)"`         //可提现资金
+	User      *User      `orm:"rel(fk);unique;cascade"` //用户Id-用户表外键
+	AdTer     *Territory `orm:"rel(fk);cascade"`        //管辖领域-领域表外键
+	AsLocal   *HoldLocal `orm:"rel(fk);cascade"`        //管辖地-管辖地表外键
+	AdGrade   string     `orm:"size(1);type(char)"`     //管辖等级 0-国级 1-省级 2-市级 3-县级
+	Money     float64    `orm:"default(0)"`             //资金总额
+	UserMoney float64    `orm:"default(0)"`             //可提现资金
 }
 
 //管辖地表
@@ -102,11 +102,11 @@ type HoldLocal struct {
 //分销商表
 type Distribution struct {
 	Id        int
-	User      *User        `orm:"rel(fk);unique"`                //用户id-用户表外键
-	AdTer     *Territory   `orm:"rel(fk)"`                       //管辖领域-领域表外键
-	AsLocal   *HoldLocal   `orm:"rel(fk)"`                       //管辖地-管辖地表外键
-	Money     float64      `orm:"default(0)"`                    //分销商总资金
-	Type      string       `orm:"size(1);type(char);default(0)"` //分销商类型 0-普通分销员 1-学生等等分销员
+	User      *User        `orm:"rel(fk);unique;cascade"` //用户id-用户表外键
+	AdTer     *Territory   `orm:"rel(fk);cascade"`        //管辖领域-领域表外键
+	AsLocal   *HoldLocal   `orm:"rel(fk);cascade"`        //管辖地-管辖地表外键
+	Money     float64      `orm:"default(0)"`             //分销商总资金
+	Type      int          `orm:"default(0)"`             //分销商类型 0-普通分销员 1-学生等等分销员
 	Address   []*Address   `orm:"reverse(many)"`
 	ShopCart  []*ShopCart  `orm:"reverse(many)"`
 	OrderInfo []*OrderInfo `orm:"reverse(many)"`
@@ -115,11 +115,11 @@ type Distribution struct {
 //收货地址表
 type Address struct {
 	Id           int
-	Distribution *Distribution `orm:"rel(fk)"`                       //分销商id
-	Content      string        `orm:"size(255)"`                     //地址内容
-	Name         string        `orm:"size(10)"`                      //收货人
-	Tele         string        `orm:"size(11);type(char)"`           //收货电话
-	IsDefault    string        `orm:"size(1);type(char);default(0)"` //默认地址 0-不是默认地址 1-默认地址
+	Distribution *Distribution `orm:"rel(fk);cascade"`     //分销商id
+	Content      string        `orm:"size(255)"`           //地址内容
+	Name         string        `orm:"size(10)"`            //收货人
+	Tele         string        `orm:"size(11);type(char)"` //收货电话
+	IsDefault    int           `orm:"default(0)"`          //默认地址 0-不是默认地址 1-默认地址
 	OrderInfo    []*OrderInfo  `orm:"reverse(many)"`
 }
 
@@ -128,12 +128,12 @@ type Goods struct {
 	Id             int
 	Name           string            `orm:"size(50);unique"` //商品名称
 	GoodsBrief     string            //商品简介 数据库类型应该为blob
-	GoodsState     string            `orm:"size(1);type(char);default(0)"` //商品状态 0-上架 1-下架
-	Explain        string            `orm:"type(30)"`                      //说明
-	CreateTime     time.Time         `orm:"auto_now_add"`                  //商品录入时间
-	UpdateTime     time.Time         `orm:"auto_now"`                      //最后修改时间
-	SalesValue     int               `orm:"default(0)"`                    //销量
-	Category       *GoodsCategory    `orm:"rel(fk);cascade"`               //分类id 级联删除
+	GoodsState     int               `orm:"default(0)"`      //商品状态 0-上架 1-下架
+	Explain        string            `orm:"type(30)"`        //说明
+	CreateTime     time.Time         `orm:"auto_now_add"`    //商品录入时间
+	UpdateTime     time.Time         `orm:"auto_now"`        //最后修改时间
+	SalesValue     int               `orm:"default(0)"`      //销量
+	Category       *GoodsCategory    `orm:"rel(fk);cascade"` //分类id 级联删除
 	ShopCart       []*ShopCart       `orm:"reverse(many)"`
 	GoodsBanner    []*GoodsBanner    `orm:"reverse(many)"`
 	OrderGoods     []*OrderGoods     `orm:"reverse(many)"`
@@ -148,7 +148,7 @@ type GoodsParameter struct {
 	Parameter2     string  //商品参数Json形式(暂时不用) 数据库类型应该为blob
 	GoodsTruePrice float64 //商品市场价
 	GoodsNowPrice  float64 //商品批发价
-	IsDefault      string  `orm:"size(1);type(char);default(0)"` //默认参数 0-不默认 1-默认
+	IsDefault      int     `orm:"default(0)"` //默认参数 0-不默认 1-默认
 	GoodsNumber    int     //产品库存
 }
 
@@ -162,11 +162,13 @@ type GoodsBanner struct {
 
 //商品分类表
 type GoodsCategory struct {
-	Id        int
-	Name      string   `orm:"size(30);unique"` //分类名称
-	ShowIndex int      `orm:"default(0)"`      //分类排序
-	ParentId  int      `orm:"default(0)"`      //父分类 0-为一级分类
-	Goods     []*Goods `orm:"reverse(many)"`
+	Id         int
+	Name       string    `orm:"size(30);unique"` //分类名称
+	ParentId   int       `orm:"default(0)"`      //父分类 0-为一级分类
+	Image      string    //分类图片
+	CreateTime time.Time `orm:"auto_now_add"` //添加时间
+	UpdateTime time.Time `orm:"auto_now"`     //修改时间
+	Goods      []*Goods  `orm:"reverse(many)"`
 }
 
 //购物车表

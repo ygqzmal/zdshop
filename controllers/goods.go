@@ -6,7 +6,6 @@ import (
 	"math"
 	"path"
 	"strconv"
-	"strings"
 	"time"
 	"zdshop/models"
 )
@@ -17,19 +16,30 @@ type GoodsController struct {
 }
 
 type Goods struct {
-	Goods []*models.Goods `json:"goods"`
-	Code int `json:"code"`
-	PageCount int `json:"page_count"`
-	PageIndex int `json:"page_index"`
+	Goods     []*models.Goods `json:"goods"`
+	Code      int             `json:"code"`
+	PageCount int             `json:"page_count"`
+	PageIndex int             `json:"page_index"`
 }
 
-//这个好像没什么实际作用，只是为了方便一览这个类的所有方法
-func (this *GoodsController) URLMapping() {
-	this.Mapping("Post", this.Post)
-	this.Mapping("GetOne", this.GetOne)
-	this.Mapping("GetAll", this.GetAll)
-	this.Mapping("Put", this.Put)
-	this.Mapping("Delete", this.Delete)
+type JsonGoods struct {
+	Name       string
+	Brief      string
+	State      int
+	Explain    string
+	CategoryId int
+	Parameters []JsonPara
+}
+
+type JsonPara struct {
+	Parameter string
+	TruePrice float64
+	NowPrice  float64
+	IsDefault int
+	Number    int
+}
+
+type JsonImg struct {
 }
 
 // @Title Post
@@ -42,7 +52,8 @@ func (this *GoodsController) URLMapping() {
 // @Success  200 {string} 商品添加成功
 // @Failure 400 商品添加失败
 // @router / [post]
-func (this *GoodsController) Post() {
+/*
+func (this *GoodsController) PostGoods() {
 	//获取商品基本属性
 	name := this.GetString("name")
 	brief := this.GetString("brief")
@@ -216,6 +227,7 @@ func (this *GoodsController) Post() {
 	resp["succMsg"] = "商品添加成功"
 	this.Data["json"] = resp
 }
+*/
 
 // @Title Update
 // @Description UpdateGoods
@@ -223,45 +235,45 @@ func (this *GoodsController) Post() {
 // @Success  200 {string} 修改商品成功
 // @Failure 403 lost data
 // @router /id [put]
-func (this *GoodsController) Put() {
-	//获取商品基本属性
-	id, _ := this.GetInt("id")
-	name := this.GetString("name")
-	brief := this.GetString("brief")
-	state := this.GetString("state")
-	explain := this.GetString("explain")
-	categoryId, _ := this.GetInt("categoryId")
-
-	resp := make(map[string]interface{})
-	defer this.ServeJSON()
-
-	var goods models.Goods
-	goods.Id = id
-	o := orm.NewOrm()
-	err := o.Read(&goods)
-	if err != nil {
-		resp["errMsg"] = "该商品不存在"
-		this.Data["json"] = resp
-		return
-	}
-	goods.Name = name
-	goods.GoodsBrief = brief
-	goods.GoodsState = state
-	goods.Explain = explain
-	var category models.GoodsCategory
-	category.Id = categoryId
-	goods.Category = &category
-
-	_, err = o.Update(&goods)
-	if err != nil {
-		resp["errMsg"] = "商品更新失败"
-		this.Data["json"] = resp
-		return
-	}
-	resp["succMsg"] = "商品更新成功"
-	this.Data["json"] = resp
-	return
-}
+//func (this *GoodsController) PutGoods() {
+//	//获取商品基本属性
+//	id, _ := this.GetInt("id")
+//	name := this.GetString("name")
+//	brief := this.GetString("brief")
+//	state := this.GetString("state")
+//	explain := this.GetString("explain")
+//	categoryId, _ := this.GetInt("categoryId")
+//
+//	resp := make(map[string]interface{})
+//	defer this.ServeJSON()
+//
+//	var goods models.Goods
+//	goods.Id = id
+//	o := orm.NewOrm()
+//	err := o.Read(&goods)
+//	if err != nil {
+//		resp["errMsg"] = "该商品不存在"
+//		this.Data["json"] = resp
+//		return
+//	}
+//	goods.Name = name
+//	goods.GoodsBrief = brief
+//	goods.GoodsState = state
+//	goods.Explain = explain
+//	var category models.GoodsCategory
+//	category.Id = categoryId
+//	goods.Category = &category
+//
+//	_, err = o.Update(&goods)
+//	if err != nil {
+//		resp["errMsg"] = "商品更新失败"
+//		this.Data["json"] = resp
+//		return
+//	}
+//	resp["succMsg"] = "商品更新成功"
+//	this.Data["json"] = resp
+//	return
+//}
 
 // @Title Get One
 // @Description Get Good
@@ -269,7 +281,7 @@ func (this *GoodsController) Put() {
 // @Success  200 {string} ok
 // @Failure 403 lost data
 // @router /:gid [get]
-func (this *GoodsController) GetOne() {
+func (this *GoodsController) GetOneGoods() {
 	//id := this.Ctx.Input.Param(":gid")
 	id, err := this.GetInt(":gid")
 	beego.Info(id)
@@ -320,7 +332,7 @@ func (this *GoodsController) GetOne() {
 // @Success  200 {object} controllers.Goods
 // @Failure 403 lost data
 // @router /:cid/:pageIndex [get]
-func (this *GoodsController) GetAll() {
+func (this *GoodsController) GetAllGoods() {
 	beego.Info("GetAll")
 	//展示一个分类下全部商品(名字+默认图片+默认参数)
 	id, err := this.GetInt(":cid")
@@ -394,7 +406,7 @@ func (this *GoodsController) GetAll() {
 // @Success  200 {string} ok
 // @Failure 403 lost data
 // @router /:gid [delete]
-func (this *GoodsController) Delete() {
+func (this *GoodsController) DeleteGoods() {
 	id, err := this.GetInt(":gid")
 	if err != nil {
 		beego.Info("获取参数失败")
@@ -416,10 +428,39 @@ func (this *GoodsController) Delete() {
 	this.Data["json"] = resp
 }
 
+// @Title Tex
+// @Description Tex
+// @Param gid path true	"body for user content"
+// @Success  200 {string} ok
+// @Failure 403 lost data
+// @router /tex [post]
 func (this *GoodsController) Tex() {
-	data := this.GetStrings("data")
-	beego.Info(data)
+	beego.Info("Tex")
+	//data := this.Ctx.Input.RequestBody
+	//data := this.GetString("data")
+	//beego.Info(data)
+	//var good JsonGood
+	//err := json.Unmarshal([]byte(data), &good)
+	//if err != nil {
+	//	beego.Info("json.Unmarshal err: ", err)
+	//	return
+	//}
+	//beego.Info(good)
+	//beego.Info(good.Name)
+	//beego.Info(good.Arr)
+	//for _, value := range good.Arr {
+	//	name := value.Name1
+	//	beego.Info(name)
+	//}
+	//
+	//resp := make(map[string]interface{})
+	//defer this.ServeJSON()
+	//
+	//resp["code"] = 200
+	//resp["data"] = good
+	//this.Data["json"] = resp
 }
+
 
 //文件上传
 func HandleFile(this *beego.Controller, image string) (message, url string) {
