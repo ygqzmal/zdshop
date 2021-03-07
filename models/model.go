@@ -27,7 +27,7 @@ type User struct {
 //资金流动表
 type Logistics struct {
 	Id          int
-	User        *User     `orm:"rel(one);cascade"`              //用户Id
+	User        *User     `orm:"rel(one)"`                      //用户Id
 	Time        time.Time `orm:"auto_now;type(datetime)"`       //流动时间
 	InFlow      string    `orm:"size(1);type(char);default(0)"` //资金流动判断 0-进账 1-出账
 	AMoney      float64   `orm:"default(0)"`                    //流动金额
@@ -37,8 +37,8 @@ type Logistics struct {
 //信息表
 type Information struct {
 	Id      int
-	User1   *User     `orm:"rel(fk);cascade"`               //发信人id-用户表的外键
-	User2   *User     `orm:"rel(fk);cascade"`               //收信人id-用户表的外键
+	User1   *User     `orm:"rel(fk)"`                       //发信人id-用户表的外键
+	User2   *User     `orm:"rel(fk)"`                       //收信人id-用户表的外键
 	Time    time.Time `orm:"auto_now_add"`                  //发信时间
 	Content string    `orm:"size(100)"`                     //发信内容
 	Kind    string    `orm:"size(1);type(char);default(0)"` //0-普通的聊天消息 1-订单状态该别消息 2-通知消息
@@ -48,7 +48,7 @@ type Information struct {
 //管理员表
 type Admin struct {
 	Id                   int          //管理员Id
-	User                 *User        `orm:"rel(fk);unique;cascade"`        //用户Id-用户表外键
+	User                 *User        `orm:"rel(fk);unique"`                //用户Id-用户表外键
 	Role                 string       `orm:"size(1);type(char);default(1)"` //分总管理员		0-总管理员 1-分管理员
 	JobPosition          string       `orm:"size(20);default(普通员工)"`        //管理员职位备注
 	GoodsAuthority       int          `orm:"default(0)"`                    //商品权限	  	0-没有权限 1-可查看权限 2-可操作商品数据权限
@@ -63,9 +63,9 @@ type Admin struct {
 //管理员操作表
 type Operation struct {
 	Id      int
-	Admin   *Admin    `orm:"rel(fk);cascade"` //管理员-管理员表外键
-	Time    time.Time `orm:"auto_now"`        //操作时间
-	Content string    `orm:"size(100)"`       //操作内容
+	Admin   *Admin    `orm:"rel(fk)"`   //管理员-管理员表外键
+	Time    time.Time `orm:"auto_now"`  //操作时间
+	Content string    `orm:"size(100)"` //操作内容
 }
 
 //领域表
@@ -80,12 +80,12 @@ type Territory struct {
 //总经销商表
 type BigDistribution struct {
 	Id        int
-	User      *User      `orm:"rel(fk);unique;cascade"` //用户Id-用户表外键
-	AdTer     *Territory `orm:"rel(fk);cascade"`        //管辖领域-领域表外键
-	AsLocal   *HoldLocal `orm:"rel(fk);cascade"`        //管辖地-管辖地表外键
-	AdGrade   string     `orm:"size(1);type(char)"`     //管辖等级 0-国级 1-省级 2-市级 3-县级
-	Money     float64    `orm:"default(0)"`             //资金总额
-	UserMoney float64    `orm:"default(0)"`             //可提现资金
+	User      *User      `orm:"rel(fk);unique"`     //用户Id-用户表外键
+	AdTer     *Territory `orm:"rel(fk)"`            //管辖领域-领域表外键
+	AsLocal   *HoldLocal `orm:"rel(fk)"`            //管辖地-管辖地表外键
+	AdGrade   string     `orm:"size(1);type(char)"` //管辖等级 0-国级 1-省级 2-市级 3-县级
+	Money     float64    `orm:"default(0)"`         //资金总额
+	UserMoney float64    `orm:"default(0)"`         //可提现资金
 }
 
 //管辖地表
@@ -102,11 +102,11 @@ type HoldLocal struct {
 //分销商表
 type Distribution struct {
 	Id        int
-	User      *User        `orm:"rel(fk);unique;cascade"` //用户id-用户表外键
-	AdTer     *Territory   `orm:"rel(fk);cascade"`        //管辖领域-领域表外键
-	AsLocal   *HoldLocal   `orm:"rel(fk);cascade"`        //管辖地-管辖地表外键
-	Money     float64      `orm:"default(0)"`             //分销商总资金
-	Type      int          `orm:"default(0)"`             //分销商类型 0-普通分销员 1-学生等等分销员
+	User      *User        `orm:"rel(fk);unique"` //用户id-用户表外键
+	AdTer     *Territory   `orm:"rel(fk)"`        //管辖领域-领域表外键
+	AsLocal   *HoldLocal   `orm:"rel(fk)"`        //管辖地-管辖地表外键
+	Money     float64      `orm:"default(0)"`     //分销商总资金
+	Type      int          `orm:"default(0)"`     //分销商类型 0-普通分销员 1-学生等等分销员
 	Address   []*Address   `orm:"reverse(many)"`
 	ShopCart  []*ShopCart  `orm:"reverse(many)"`
 	OrderInfo []*OrderInfo `orm:"reverse(many)"`
@@ -115,7 +115,7 @@ type Distribution struct {
 //收货地址表
 type Address struct {
 	Id           int
-	Distribution *Distribution `orm:"rel(fk);cascade"`     //分销商id
+	Distribution *Distribution `orm:"rel(fk)"`             //分销商id
 	Content      string        `orm:"size(255)"`           //地址内容
 	Name         string        `orm:"size(10)"`            //收货人
 	Tele         string        `orm:"size(11);type(char)"` //收货电话
@@ -127,37 +127,38 @@ type Address struct {
 type Goods struct {
 	Id             int
 	Name           string            `orm:"size(50);unique"` //商品名称
-	GoodsBrief     string            //商品简介 数据库类型应该为blob
+	GoodsBrief     string            `orm:"type(text)"`      //商品简介 数据库类型应该为blob
 	GoodsState     int               `orm:"default(0)"`      //商品状态 0-上架 1-下架
 	Explain        string            `orm:"type(30)"`        //说明
 	CreateTime     time.Time         `orm:"auto_now_add"`    //商品录入时间
 	UpdateTime     time.Time         `orm:"auto_now"`        //最后修改时间
 	SalesValue     int               `orm:"default(0)"`      //销量
-	Category       *GoodsCategory    `orm:"rel(fk);cascade"` //分类id 级联删除
+	Category       *GoodsCategory    `orm:"rel(fk)"`         //分类id 级联删除
 	ShopCart       []*ShopCart       `orm:"reverse(many)"`
 	GoodsBanner    []*GoodsBanner    `orm:"reverse(many)"`
-	OrderGoods     []*OrderGoods     `orm:"reverse(many)"`
 	GoodsParameter []*GoodsParameter `orm:"reverse(many)"`
 }
 
 //商品参数表
 type GoodsParameter struct {
 	Id             int
-	Goods          *Goods  `orm:"rel(fk);cascade"` //级联删除
-	Parameter      string  `orm:"size(30)"`        //商品参数
-	Parameter2     string  //商品参数Json形式(暂时不用) 数据库类型应该为blob
-	GoodsTruePrice float64 //商品市场价
-	GoodsNowPrice  float64 //商品批发价
-	IsDefault      int     `orm:"default(0)"` //默认参数 0-不默认 1-默认
-	GoodsNumber    int     //产品库存
+	Goods          *Goods        `orm:"rel(fk)"`  //级联删除 cascade 不需要这个也会自动联级删除
+	Parameter      string        `orm:"size(30)"` //商品参数
+	Parameter2     string        //商品参数Json形式(暂时不用) 数据库类型应该为blob
+	GoodsTruePrice float64       //商品市场价
+	GoodsNowPrice  float64       //商品批发价
+	IsDefault      int           `orm:"default(0)"` //默认参数 0-不默认 1-默认
+	GoodsNumber    int           //产品库存
+	SalesValue     int           `orm:"default(0)"` //销量
+	OrderGoods     []*OrderGoods `orm:"reverse(many)"`
 }
 
 //商品图片表
 type GoodsBanner struct {
 	Id        int
-	Goods     *Goods `orm:"rel(fk);cascade"` //商品id
-	IsDefault int    `orm:"default(0)"`      //默认图片 0-不默认 1-默认(首页展示图片)
-	GoodsUrl  string `orm:"size(255)"`       //图片路径
+	Goods     *Goods `orm:"rel(fk)"`    //商品id
+	IsDefault int    `orm:"default(0)"` //默认图片 0-不默认 1-默认(首页展示图片)
+	GoodsUrl  string `orm:"size(255)"`  //图片路径
 }
 
 //商品分类表
@@ -183,22 +184,46 @@ type ShopCart struct {
 //订单表
 type OrderInfo struct {
 	Id           int
-	Distribution *Distribution `orm:"rel(fk)"`                       //分销商id
-	Address      *Address      `orm:"rel(fk)"`                       //地址id
-	TotalCount   int           `orm:"default(0)"`                    //商品总数
-	TotalPrice   float64       `orm:"default(0)"`                    //商品总价
-	OrderStatus  string        `orm:"size(1);type(char);default(0)"` //订单状态 0-未支付 1-已支付 2-已发货 3-已签收 4-退款
-	CreateTime   time.Time     `orm:"auto_now_add"`                  //下单时间
+	OrderId      string        `orm:"unique"`             //订单Id
+	Distribution *Distribution `orm:"rel(fk)"`            //分销商id(用户id)
+	Address      *Address      `orm:"rel(fk)"`            //地址id
+	TotalCount   int           `orm:"default(0)"`         //商品总数
+	TotalPrice   float64       `orm:"default(0)"`         //商品总价
+	OrderStatus  int           `orm:"size(1);default(0)"` //订单状态 0-未支付 1-已支付 2-已发货 3-已签收 4-退款 5-已完成
+	CreateTime   time.Time     `orm:"auto_now_add"`       //下单时间
 	OrderGoods   []*OrderGoods `orm:"reverse(many)"`
 }
 
 //订单商品表
 type OrderGoods struct {
-	Id    int
-	Order *OrderInfo `orm:"rel(fk)"`    //订单id
-	Goods *Goods     `orm:"rel(fk)"`    //商品id
-	Count int        `orm:"default(0)"` //小件数量
-	Price float64    `orm:"default(0)"` //小件价格
+	Id             int
+	OrderInfo      *OrderInfo      `orm:"rel(fk)"`    //订单id
+	GoodsParameter *GoodsParameter `orm:"rel(fk)"`    //商品id
+	Count          int             `orm:"default(0)"` //小件数量
+	Price          float64         `orm:"default(0)"` //小件价格
+}
+
+// 设置引擎为 INNODB
+func (g *GoodsCategory) TableEngine() string {
+	return "INNODB"
+}
+func (g *Goods) TableEngine() string {
+	return "INNODB"
+}
+func (g *GoodsParameter) TableEngine() string {
+	return "INNODB"
+}
+func (g *GoodsBanner) TableEngine() string {
+	return "INNODB"
+}
+func (g *OrderInfo) TableEngine() string {
+	return "INNODB"
+}
+func (g *OrderGoods) TableEngine() string {
+	return "INNODB"
+}
+func (g *ShopCart) TableEngine() string {
+	return "INNODB"
 }
 
 func init() {

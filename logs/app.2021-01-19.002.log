@@ -1,0 +1,126 @@
+2021/01/19 14:50:15.949 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/19 14:50:35.436 [D] [server.go:2802] 127.0.0.1 - - [19/Jan/2021 02:50:35] "POST /v1/category HTTP/1.1 200 0" 0.009972  PostmanRuntime/7.26.8
+
+2021/01/19 14:51:07.533 [C] [panic.go:679] the request url is  /v1/category
+2021/01/19 14:51:07.534 [C] [panic.go:679] Handler crashed with error runtime error: invalid memory address or nil pointer dereference
+2021/01/19 14:51:07.534 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/panic.go:679
+2021/01/19 14:51:07.535 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/panic.go:199
+2021/01/19 14:51:07.535 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/signal_windows.go:233
+2021/01/19 14:51:07.536 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/controller.go:512
+2021/01/19 14:51:07.545 [C] [panic.go:679] D:/Go/awesomeProject/src/zdshop/controllers/category.go:64
+2021/01/19 14:51:07.545 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/reflect/value.go:460
+2021/01/19 14:51:07.545 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/reflect/value.go:321
+2021/01/19 14:51:07.546 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/router.go:847
+2021/01/19 14:51:07.546 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/net/http/server.go:2802
+2021/01/19 14:51:07.546 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/net/http/server.go:1890
+2021/01/19 14:51:07.547 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/asm_amd64.s:1357
+2021/01/19 14:51:07.548 [server.go:3054] [HTTP] http: superfluous response.WriteHeader call from github.com/astaxie/beego/context.(*Response).WriteHeader (context.go:221)
+2021/01/19 14:51:28.261 [D] [server.go:2802] 127.0.0.1 - - [19/Jan/2021 02:51:28] "POST /v1/category HTTP/1.1 200 0" 0.006981  PostmanRuntime/7.26.8
+
+2021/01/19 14:52:26.231 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/19 14:54:52.980 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/19 14:55:10.851 [I] [category.go:39] 该分类名称已经存在, 请勿重复添加 
+2021/01/19 14:55:10.851 [D] [server.go:2802] 127.0.0.1 - - [19/Jan/2021 02:55:10] "POST /v1/category HTTP/1.1 200 0" 0.000998  PostmanRuntime/7.26.8
+
+2021/01/19 14:55:24.677 [I] [category.go:63] 二级分类图片不能为空 
+2021/01/19 14:55:24.678 [D] [server.go:2802] 127.0.0.1 - - [19/Jan/2021 02:55:24] "POST /v1/category HTTP/1.1 200 0" 0.000997  PostmanRuntime/7.26.8
+
+2021/01/19 14:55:55.833 [D] [server.go:2802] 127.0.0.1 - - [19/Jan/2021 02:55:55] "POST /v1/category HTTP/1.1 200 0" 0.010011  PostmanRuntime/7.26.8
+
+2021/01/19 14:56:02.869 [D] [server.go:2802] 127.0.0.1 - - [19/Jan/2021 02:56:02] "POST /v1/category HTTP/1.1 200 0" 0.015047  PostmanRuntime/7.26.8
+
+2021/01/19 14:56:15.188 [D] [server.go:2802] 127.0.0.1 - - [19/Jan/2021 02:56:15] "POST /v1/category HTTP/1.1 200 0" 0.014960  PostmanRuntime/7.26.8
+
+2021/01/19 15:03:15.711 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/19 15:03:45.619 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/19 15:04:10.381 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/19 15:16:02.910 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/19 15:23:24.324 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/19 15:29:12.243 [I] [goods.go:60] 事务开启： <nil> 
+2021/01/19 15:29:12.244 [I] [goods.go:67] rollback err : <nil> 
+2021/01/19 15:29:12.244 [D] [server.go:2802] 127.0.0.1 - - [19/Jan/2021 03:29:12] "POST /v1/goods HTTP/1.1 200 0" 0.000999  PostmanRuntime/7.26.8
+
+2021/01/19 15:30:47.037 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/19 15:30:56.037 [I] [goods.go:60] 事务开启： <nil> 
+2021/01/19 15:30:56.042 [I] [goods.go:126] json:  [
+        {
+            "parameter":"尊贵版",
+            "truePrice":200000,
+            "nowPrice":190000,
+            "isDefault":1,
+            "number":200
+        },
+        {
+            "parameter":"限量版 顶配版 双拼色",
+            "truePrice":300000,
+            "nowPrice":250000,
+            "isDefault":0,
+            "number":100
+        }   
+] 
+2021/01/19 15:30:56.043 [I] [goods.go:143] [{尊贵版 200000 190000 1 200} {限量版 顶配版 双拼色 300000 250000 0 100}] 
+2021/01/19 15:30:56.048 [C] [panic.go:679] the request url is  /v1/goods
+2021/01/19 15:30:56.049 [C] [panic.go:679] Handler crashed with error runtime error: invalid memory address or nil pointer dereference
+2021/01/19 15:30:56.049 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/panic.go:679
+2021/01/19 15:30:56.049 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/panic.go:199
+2021/01/19 15:30:56.050 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/signal_windows.go:233
+2021/01/19 15:30:56.050 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/controller.go:512
+2021/01/19 15:30:56.050 [C] [panic.go:679] D:/Go/awesomeProject/src/zdshop/controllers/goods.go:181
+2021/01/19 15:30:56.050 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/reflect/value.go:460
+2021/01/19 15:30:56.050 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/reflect/value.go:321
+2021/01/19 15:30:56.051 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/router.go:847
+2021/01/19 15:30:56.051 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/net/http/server.go:2802
+2021/01/19 15:30:56.051 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/net/http/server.go:1890
+2021/01/19 15:30:56.052 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/asm_amd64.s:1357
+2021/01/19 15:30:56.053 [server.go:3054] [HTTP] http: superfluous response.WriteHeader call from github.com/astaxie/beego/context.(*Response).WriteHeader (context.go:221)
+2021/01/19 15:31:14.403 [I] [goods.go:60] 事务开启： <nil> 
+2021/01/19 15:32:15.453 [I] [goods.go:100] Error 1205: Lock wait timeout exceeded; try restarting transaction 
+2021/01/19 15:32:15.455 [D] [server.go:2802] 127.0.0.1 - - [19/Jan/2021 03:31:14] "POST /v1/goods HTTP/1.1 200 0" 61.056081  PostmanRuntime/7.26.8
+
+2021/01/19 15:33:47.350 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/19 15:33:58.690 [I] [goods.go:60] 事务开启： <nil> 
+2021/01/19 15:33:58.695 [I] [goods.go:126] json:  [
+        {
+            "parameter":"尊贵版",
+            "truePrice":200000,
+            "nowPrice":190000,
+            "isDefault":1,
+            "number":200
+        },
+        {
+            "parameter":"限量版 顶配版 双拼色",
+            "truePrice":300000,
+            "nowPrice":250000,
+            "isDefault":0,
+            "number":100
+        }   
+] 
+2021/01/19 15:33:58.696 [I] [goods.go:143] [{尊贵版 200000 190000 1 200} {限量版 顶配版 双拼色 300000 250000 0 100}] 
+2021/01/19 15:33:58.709 [I] [goods.go:247] 商品添加成功 
+2021/01/19 15:33:58.710 [D] [server.go:2802] 127.0.0.1 - - [19/Jan/2021 03:33:58] "POST /v1/goods HTTP/1.1 200 0" 0.021941  PostmanRuntime/7.26.8
+
+2021/01/19 15:35:58.966 [I] [goods.go:60] 事务开启： <nil> 
+2021/01/19 15:35:58.967 [I] [goods.go:84] 该商品名称已经存在 
+2021/01/19 15:35:58.967 [D] [server.go:2802] 127.0.0.1 - - [19/Jan/2021 03:35:58] "POST /v1/goods HTTP/1.1 200 0" 0.004987  PostmanRuntime/7.26.8
+
+2021/01/19 15:36:25.852 [I] [goods.go:60] 事务开启： <nil> 
+2021/01/19 15:36:25.853 [I] [goods.go:126] json:  [
+        {
+            "parameter":"尊贵版",
+            "truePrice":200000,
+            "nowPrice":190000,
+            "isDefault":1,
+            "number":200
+        },
+        {
+            "parameter":"限量版 顶配版 双拼色",
+            "truePrice":300000,
+            "nowPrice":250000,
+            "isDefault":0,
+            "number":100
+        }   
+] 
+2021/01/19 15:36:25.854 [I] [goods.go:143] [{尊贵版 200000 190000 1 200} {限量版 顶配版 双拼色 300000 250000 0 100}] 
+2021/01/19 15:36:25.863 [I] [goods.go:247] 商品添加成功 
+2021/01/19 15:36:25.864 [D] [server.go:2802] 127.0.0.1 - - [19/Jan/2021 03:36:25] "POST /v1/goods HTTP/1.1 200 0" 0.017928  PostmanRuntime/7.26.8
+

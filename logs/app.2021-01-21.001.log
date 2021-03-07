@@ -1,0 +1,92 @@
+2021/01/20 15:08:43.786 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/20 15:08:45.815 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/20 15:31:26.590 [I] [goods.go:63] 事务开启： <nil> 
+2021/01/20 15:31:26.598 [I] [goods.go:129] json:  [
+        {
+            "parameter":"尊贵版",
+            "truePrice":200000,
+            "nowPrice":190000,
+            "isDefault":1,
+            "number":200
+        },
+        {
+            "parameter":"限量版 顶配版 双拼色",
+            "truePrice":300000,
+            "nowPrice":250000,
+            "isDefault":0,
+            "number":100
+        }   
+] 
+2021/01/20 15:31:26.599 [I] [goods.go:146] [{尊贵版 200000 190000 1 200} {限量版 顶配版 双拼色 300000 250000 0 100}] 
+2021/01/20 15:31:26.608 [I] [goods.go:215] 存在轮播图 
+2021/01/20 15:31:26.610 [I] [goods.go:241] 轮播图插入成功 
+2021/01/20 15:31:26.611 [I] [goods.go:241] 轮播图插入成功 
+2021/01/20 15:31:26.617 [I] [goods.go:254] 商品添加成功 
+2021/01/20 15:31:26.620 [D] [server.go:2802] 127.0.0.1 - - [20/Jan/2021 03:31:26] "POST /v1/goods HTTP/1.1 200 0" 0.045886  PostmanRuntime/7.26.8
+
+2021/01/20 15:32:07.817 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/20 15:34:38.616 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/20 15:35:12.702 [D] [server.go:2802] 127.0.0.1 - - [20/Jan/2021 03:35:12] "GET /v1/goods/7 HTTP/1.1 200 0" 0.018950  PostmanRuntime/7.26.8
+
+2021/01/20 15:39:58.667 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/20 15:40:04.923 [D] [server.go:2802] 127.0.0.1 - - [20/Jan/2021 03:40:04] "GET /v1/goods/7 HTTP/1.1 200 0" 0.003990  PostmanRuntime/7.26.8
+
+2021/01/20 15:44:50.459 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/20 15:47:52.084 [I] [goods.go:274] 商品查询失败: err Error 1054: Unknown column 'T0.GoodsBanner' in 'field list' 
+2021/01/20 15:47:52.084 [D] [server.go:2802] 127.0.0.1 - - [20/Jan/2021 03:47:52] "GET /v1/goods/7 HTTP/1.1 200 0" 0.001998  PostmanRuntime/7.26.8
+
+2021/01/20 15:48:55.913 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/20 15:49:23.268 [D] [server.go:2802] 127.0.0.1 - - [20/Jan/2021 03:49:23] "GET /v1/goods/7 HTTP/1.1 200 0" 0.009011  PostmanRuntime/7.26.8
+
+2021/01/20 15:50:15.299 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/20 15:50:20.344 [D] [server.go:2802] 127.0.0.1 - - [20/Jan/2021 03:50:20] "GET /v1/goods/7 HTTP/1.1 200 0" 0.008979  PostmanRuntime/7.26.8
+
+2021/01/20 15:52:16.719 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/20 15:52:20.523 [C] [panic.go:679] the request url is  /v1/goods/7
+2021/01/20 15:52:20.523 [C] [panic.go:679] Handler crashed with error unknown model/table name `GoodsBanner`
+2021/01/20 15:52:20.524 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/panic.go:679
+2021/01/20 15:52:20.525 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/orm/db_tables.go:160
+2021/01/20 15:52:20.525 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/orm/db.go:950
+2021/01/20 15:52:20.526 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/orm/orm_queryset.go:201
+2021/01/20 15:52:20.527 [C] [panic.go:679] D:/Go/awesomeProject/src/zdshop/controllers/goods.go:271
+2021/01/20 15:52:20.528 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/reflect/value.go:460
+2021/01/20 15:52:20.528 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/reflect/value.go:321
+2021/01/20 15:52:20.529 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/router.go:847
+2021/01/20 15:52:20.529 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/net/http/server.go:2802
+2021/01/20 15:52:20.530 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/net/http/server.go:1890
+2021/01/20 15:52:20.530 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/asm_amd64.s:1357
+2021/01/20 15:52:54.970 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/20 15:52:58.618 [C] [panic.go:679] the request url is  /v1/goods/7
+2021/01/20 15:52:58.618 [C] [panic.go:679] Handler crashed with error unknown model/table name `Id`
+2021/01/20 15:52:58.619 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/panic.go:679
+2021/01/20 15:52:58.620 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/orm/db_tables.go:160
+2021/01/20 15:52:58.620 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/orm/db.go:950
+2021/01/20 15:52:58.621 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/orm/orm_queryset.go:201
+2021/01/20 15:52:58.622 [C] [panic.go:679] D:/Go/awesomeProject/src/zdshop/controllers/goods.go:271
+2021/01/20 15:52:58.622 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/reflect/value.go:460
+2021/01/20 15:52:58.623 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/reflect/value.go:321
+2021/01/20 15:52:58.626 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/router.go:847
+2021/01/20 15:52:58.626 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/net/http/server.go:2802
+2021/01/20 15:52:58.627 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/net/http/server.go:1890
+2021/01/20 15:52:58.628 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/asm_amd64.s:1357
+2021/01/20 15:53:30.922 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/20 15:54:48.345 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/20 16:06:36.754 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/20 16:18:55.100 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/20 16:19:27.782 [D] [server.go:2802] 127.0.0.1 - - [20/Jan/2021 04:19:27] "GET /v1/goods/8/ HTTP/1.1 200 0" 0.020911  PostmanRuntime/7.26.8
+
+2021/01/20 16:20:26.719 [I] [goods.go:309] GetAll 
+2021/01/20 16:20:26.719 [I] [goods.go:322] 1 
+2021/01/20 16:20:26.731 [I] [goods.go:373] [0xc000226270 0xc000226340] 
+2021/01/20 16:20:26.731 [D] [server.go:2802] 127.0.0.1 - - [20/Jan/2021 04:20:26] "GET /v1/goods/8/1 HTTP/1.1 200 0" 0.012362  PostmanRuntime/7.26.8
+
+2021/01/20 16:21:08.175 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/20 16:21:18.587 [D] [server.go:2802] 127.0.0.1 - - [20/Jan/2021 04:21:18] "GET /v1/goods/8/ HTTP/1.1 200 0" 0.003990  PostmanRuntime/7.26.8
+
+2021/01/20 16:21:28.266 [I] [goods.go:309] GetAll 
+2021/01/20 16:21:28.266 [I] [goods.go:322] 1 
+2021/01/20 16:21:28.271 [I] [goods.go:373] [0xc00030fba0 0xc00030fc70] 
+2021/01/20 16:21:28.271 [D] [server.go:2802] 127.0.0.1 - - [20/Jan/2021 04:21:28] "GET /v1/goods/8/1 HTTP/1.1 200 0" 0.004985  PostmanRuntime/7.26.8
+
+2021/01/20 16:22:33.706 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/20 16:24:40.629 [I] [asm_amd64.s:1357] http server Running on http://:8080
