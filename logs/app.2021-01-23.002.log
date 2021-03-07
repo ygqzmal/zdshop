@@ -1,0 +1,100 @@
+2021/01/23 02:00:30.705 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:01:56.224 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:01:56] "GET /v1/order/ HTTP/1.1 404 0" 0.000997  PostmanRuntime/7.26.8
+
+2021/01/23 02:02:22.327 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:02:22] "GET /v1/order/ HTTP/1.1 404 0" 0.000000  PostmanRuntime/7.26.8
+
+2021/01/23 02:02:34.178 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:02:41.806 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:02:41] "GET /v1/order/ HTTP/1.1 404 0" 0.000044  PostmanRuntime/7.26.8
+
+2021/01/23 02:03:38.576 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:03:48.257 [C] [panic.go:679] the request url is  /v1/order/
+2021/01/23 02:03:48.259 [C] [panic.go:679] Handler crashed with error wrong object type `*[]*models.OrderGoods` for rows scan, need *[]*zdshop/models.OrderInfo or *[]zdshop/models.OrderInfo
+2021/01/23 02:03:48.259 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/panic.go:679
+2021/01/23 02:03:48.260 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/orm/db.go:905
+2021/01/23 02:03:48.260 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/orm/orm_queryset.go:194
+2021/01/23 02:03:48.260 [C] [panic.go:679] D:/Go/awesomeProject/src/zdshop/controllers/order.go:69
+2021/01/23 02:03:48.260 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/reflect/value.go:460
+2021/01/23 02:03:48.260 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/reflect/value.go:321
+2021/01/23 02:03:48.261 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/router.go:847
+2021/01/23 02:03:48.261 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/net/http/server.go:2802
+2021/01/23 02:03:48.261 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/net/http/server.go:1890
+2021/01/23 02:03:48.261 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/asm_amd64.s:1357
+2021/01/23 02:04:40.270 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:04:43.901 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:04:43] "GET /v1/order/ HTTP/1.1 200 0" 0.000997  PostmanRuntime/7.26.8
+
+2021/01/23 02:05:23.507 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:06:12.546 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:06:21.499 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:06:24.711 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:06:24] "GET /v1/order/ HTTP/1.1 200 0" 0.007977  PostmanRuntime/7.26.8
+
+2021/01/23 02:06:45.441 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:06:48.026 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:06:48] "GET /v1/order/ HTTP/1.1 200 0" 0.006982  PostmanRuntime/7.26.8
+
+2021/01/23 02:07:08.130 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:07:10.513 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:07:10] "GET /v1/order/ HTTP/1.1 200 0" 0.002043  PostmanRuntime/7.26.8
+
+2021/01/23 02:07:11.632 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:07:11] "GET /v1/order/ HTTP/1.1 200 0" 0.000000  PostmanRuntime/7.26.8
+
+2021/01/23 02:09:09.208 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:09:19.524 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:09:19] "POST /v1/order/ HTTP/1.1 200 0" 0.005984  PostmanRuntime/7.26.8
+
+2021/01/23 02:12:22.914 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:12:40.336 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:12:46.914 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:12:46] "POST /v1/order/ HTTP/1.1 200 0" 0.014961  PostmanRuntime/7.26.8
+
+2021/01/23 02:13:35.523 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:13:51.906 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:13:51] "GET /v1/order/ HTTP/1.1 200 0" 0.000970  PostmanRuntime/7.26.8
+
+2021/01/23 02:14:26.229 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:14:30.198 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:14:30] "GET /v1/order/ HTTP/1.1 200 0" 0.001000  PostmanRuntime/7.26.8
+
+2021/01/23 02:15:15.503 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:15:20.451 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:15:20] "GET /v1/order/ HTTP/1.1 200 0" 0.000997  PostmanRuntime/7.26.8
+
+2021/01/23 02:16:25.784 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:23:13.631 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:23:27.944 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:23:27] "DELETE /v1/order/ HTTP/1.1 404 0" 0.000000  PostmanRuntime/7.26.8
+
+2021/01/23 02:24:21.348 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:24:24.603 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:24:24] "DELETE /v1/order/ HTTP/1.1 404 0" 0.000997  PostmanRuntime/7.26.8
+
+2021/01/23 02:25:01.971 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:25:01] "DELETE /v1/order/ HTTP/1.1 404 0" 0.000000  PostmanRuntime/7.26.8
+
+2021/01/23 02:25:12.993 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:25:12] "DELETE /v1/order/1 HTTP/1.1 200 0" 0.009973  PostmanRuntime/7.26.8
+
+2021/01/23 02:26:47.087 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:26:47] "DELETE /v1/order/4 HTTP/1.1 200 0" 0.010567  PostmanRuntime/7.26.8
+
+2021/01/23 02:26:50.022 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:26:50] "DELETE /v1/order/5 HTTP/1.1 200 0" 0.002992  PostmanRuntime/7.26.8
+
+2021/01/23 02:27:05.069 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:27:05] "DELETE /v1/order/6 HTTP/1.1 200 0" 0.012029  PostmanRuntime/7.26.8
+
+2021/01/23 02:29:29.467 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:29:33.440 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:29:33] "DELETE /v1/order/6 HTTP/1.1 200 0" 0.001001  PostmanRuntime/7.26.8
+
+2021/01/23 02:29:52.418 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:29:52] "GET /v1/order/ HTTP/1.1 200 0" 0.000997  PostmanRuntime/7.26.8
+
+2021/01/23 02:36:01.794 [I] [goods.go:274] 商品查询失败: err <QuerySeter> no row found 
+2021/01/23 02:36:01.795 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:36:01] "GET /v1/goods/6 HTTP/1.1 200 0" 0.004956  PostmanRuntime/7.26.8
+
+2021/01/23 02:36:21.518 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:36:21] "GET /v1/goods/7 HTTP/1.1 200 0" 0.010971  PostmanRuntime/7.26.8
+
+2021/01/23 02:37:11.655 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:37:26.336 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:37:26] "GET /v1/goods/7 HTTP/1.1 200 0" 0.015958  PostmanRuntime/7.26.8
+
+2021/01/23 02:38:09.957 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:38:12.783 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:38:12] "GET /v1/goods/7 HTTP/1.1 200 0" 0.019947  PostmanRuntime/7.26.8
+
+2021/01/23 02:39:27.423 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:39:30.824 [C] [panic.go:679] the request url is  /v1/goods/7
+2021/01/23 02:39:30.824 [C] [panic.go:679] Handler crashed with error unknown model/table name `Id`
+2021/01/23 02:39:30.825 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/panic.go:679
+2021/01/23 02:39:30.825 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/orm/db_tables.go:160
+2021/01/23 02:39:30.825 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/orm/db.go:950
+2021/01/23 02:39:30.825 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/orm/orm_queryset.go:201
+2021/01/23 02:39:30.826 [C] [panic.go:679] D:/Go/awesomeProject/src/zdshop/controllers/goods.go:271
+2021/01/23 02:39:30.826 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/reflect/value.go:460
+2021/01/23 02:39:30.826 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/reflect/value.go:321
+2021/01/23 02:39:30.826 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/router.go:847
+2021/01/23 02:39:30.827 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/net/http/server.go:2802
+2021/01/23 02:39:30.827 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/net/http/server.go:1890
+2021/01/23 02:39:30.827 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/asm_amd64.s:1357

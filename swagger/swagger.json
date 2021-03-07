@@ -15,6 +15,178 @@
     },
     "basePath": "/v1",
     "paths": {
+        "/cart/": {
+            "get": {
+                "tags": [
+                    "cart"
+                ],
+                "description": "Get cart",
+                "operationId": "CartController.Get",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/controllers.Cart"
+                        }
+                    },
+                    "400": {
+                        "description": "显示失败"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "cart"
+                ],
+                "description": "add cart",
+                "operationId": "CartController.Post",
+                "parameters": [
+                    {
+                        "in": "formData",
+                        "name": "pid",
+                        "description": "参数id",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    },
+                    {
+                        "in": "formData",
+                        "name": "count",
+                        "description": "添加数量",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} 购物车添加成功"
+                    },
+                    "400": {
+                        "description": "购物车添加失败"
+                    }
+                }
+            }
+        },
+        "/cart/{gid}": {
+            "get": {
+                "tags": [
+                    "cart"
+                ],
+                "description": "Get parameter",
+                "operationId": "CartController.Get",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "gid",
+                        "description": "gid for goods id",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.GoodsParameter"
+                        }
+                    },
+                    "400": {
+                        "description": "lost data"
+                    }
+                }
+            }
+        },
+        "/cart/{oldId}/{newId}/{count}": {
+            "put": {
+                "tags": [
+                    "cart"
+                ],
+                "description": "Put cart",
+                "operationId": "CartController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "pid",
+                        "description": "pid for parameter id",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} ok"
+                    },
+                    "400": {
+                        "description": "update失败"
+                    }
+                }
+            }
+        },
+        "/cart/{pid}": {
+            "delete": {
+                "tags": [
+                    "cart"
+                ],
+                "description": "Get parameter",
+                "operationId": "CartController.Get",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "pid",
+                        "description": "pid for goodsParameter id",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} 删除成功"
+                    },
+                    "400": {
+                        "description": "lost data"
+                    }
+                }
+            }
+        },
+        "/cart/{pid}/{count}": {
+            "put": {
+                "tags": [
+                    "cart"
+                ],
+                "description": "Put cart",
+                "operationId": "CartController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "pid",
+                        "description": "pid for parameter id",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "count",
+                        "description": "count for parameter",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} ok"
+                    },
+                    "400": {
+                        "description": "update失败"
+                    }
+                }
+            }
+        },
         "/category/": {
             "get": {
                 "tags": [
@@ -22,6 +194,39 @@
                 ],
                 "description": "获取一级分类",
                 "operationId": "CategoryController.Get First",
+                "responses": {
+                    "200": {
+                        "description": "{string} 成功"
+                    },
+                    "400": {
+                        "description": "失败"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "category"
+                ],
+                "description": "修改某个分类名字",
+                "operationId": "CategoryController.Put Category",
+                "parameters": [
+                    {
+                        "in": "formDate",
+                        "name": "cid",
+                        "description": "分类id",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    },
+                    {
+                        "in": "formDate",
+                        "name": "name",
+                        "description": "分类名称",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "{string} 成功"
@@ -40,7 +245,7 @@
                 "parameters": [
                     {
                         "in": "formData",
-                        "name": "name",
+                        "name": "categoryName",
                         "description": "分类名称",
                         "schema": {
                             "$ref": "#/definitions/.true"
@@ -49,7 +254,7 @@
                     {
                         "in": "formData",
                         "name": "categoryId",
-                        "description": "分类名称",
+                        "description": "分类ID",
                         "schema": {
                             "$ref": "#/definitions/.false"
                         }
@@ -57,7 +262,7 @@
                     {
                         "in": "formData",
                         "name": "image",
-                        "description": "分类名称",
+                        "description": "分类图片",
                         "schema": {
                             "$ref": "#/definitions/.false"
                         }
@@ -128,25 +333,108 @@
             }
         },
         "/goods/": {
-            "put": {
+            "post": {
                 "tags": [
                     "goods"
                 ],
-                "description": "修改某个分类名字",
-                "operationId": "GoodsController.Put Category",
+                "description": "AddGoods and AddGoodsParameter and AddGoodsBanner",
+                "operationId": "GoodsController.Post",
                 "parameters": [
                     {
-                        "in": "formDate",
-                        "name": "cid",
-                        "description": "分类id",
+                        "in": "formData",
+                        "name": "name",
+                        "description": "商品名称",
                         "schema": {
                             "$ref": "#/definitions/.true"
                         }
                     },
                     {
-                        "in": "formDate",
-                        "name": "name",
-                        "description": "分类名称",
+                        "in": "formData",
+                        "name": "brief",
+                        "description": "商品简介",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    },
+                    {
+                        "in": "formData",
+                        "name": "state",
+                        "description": "商品状态 1-上架 2-下架",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    },
+                    {
+                        "in": "formData",
+                        "name": "explain",
+                        "description": "商品说明",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    },
+                    {
+                        "in": "formData",
+                        "name": "categoryId",
+                        "description": "商品分类id",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    },
+                    {
+                        "in": "formData",
+                        "name": "parameters",
+                        "description": "商品参数",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    },
+                    {
+                        "in": "formData",
+                        "name": "img",
+                        "description": "商品默认图片",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    },
+                    {
+                        "in": "formData",
+                        "name": "imgs",
+                        "description": "商品轮播图片",
+                        "schema": {
+                            "$ref": "#/definitions/.false"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} 商品添加成功"
+                    },
+                    "400": {
+                        "description": "商品添加失败"
+                    }
+                }
+            }
+        },
+        "/goods/img": {
+            "put": {
+                "tags": [
+                    "goods"
+                ],
+                "description": "update goods BannerImage",
+                "operationId": "GoodsController.Put BannerImage",
+                "parameters": [
+                    {
+                        "in": "formData",
+                        "name": "bid",
+                        "description": "body for user content",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    },
+                    {
+                        "in": "formData",
+                        "name": "img",
+                        "description": "default image",
                         "schema": {
                             "$ref": "#/definitions/.true"
                         }
@@ -154,10 +442,264 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "{string} 成功"
+                        "description": "{string} ok"
                     },
-                    "400": {
-                        "description": "失败"
+                    "403": {
+                        "description": "lost data"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "goods"
+                ],
+                "description": "post goods BannerImage",
+                "operationId": "GoodsController.Post BannerImage",
+                "parameters": [
+                    {
+                        "in": "formData",
+                        "name": "gid",
+                        "description": "id for goods id",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    },
+                    {
+                        "in": "formData",
+                        "name": "img",
+                        "description": "body for user content",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} ok"
+                    },
+                    "403": {
+                        "description": "lost data"
+                    }
+                }
+            }
+        },
+        "/goods/img/{bid}": {
+            "delete": {
+                "tags": [
+                    "goods"
+                ],
+                "description": "update default goods image",
+                "operationId": "GoodsController.Delete BannerImage",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "bid",
+                        "description": "body for user content",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} ok"
+                    },
+                    "403": {
+                        "description": "lost data"
+                    }
+                }
+            }
+        },
+        "/goods/para/{pid}": {
+            "delete": {
+                "tags": [
+                    "goods"
+                ],
+                "description": "Delete One Parameter",
+                "operationId": "GoodsController.Delete Parameter",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "pid",
+                        "description": "id for parameter id",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} 参数删除成功"
+                    },
+                    "403": {
+                        "description": "lost data"
+                    }
+                }
+            }
+        },
+        "/goods/putAttribute": {
+            "put": {
+                "tags": [
+                    "goods"
+                ],
+                "description": "UpdateGoodsAttribute",
+                "operationId": "GoodsController.Update Goods Attribute",
+                "parameters": [
+                    {
+                        "in": "formDate",
+                        "name": "gid",
+                        "description": "id for goods goodsId",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    },
+                    {
+                        "in": "formDate",
+                        "name": "cid",
+                        "description": "cid for goods categoryId",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    },
+                    {
+                        "in": "formDate",
+                        "name": "name",
+                        "description": "name for goods goodsName",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} 修改商品成功"
+                    },
+                    "403": {
+                        "description": "lost data"
+                    }
+                }
+            }
+        },
+        "/goods/putBanner": {
+            "put": {
+                "tags": [
+                    "goods"
+                ],
+                "description": "UpdateGoodsBanner",
+                "operationId": "GoodsController.Update Goods Banner",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "gid",
+                        "description": "id for goods",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} 修改商品成功"
+                    },
+                    "403": {
+                        "description": "lost data"
+                    }
+                }
+            }
+        },
+        "/goods/putParameter": {
+            "put": {
+                "tags": [
+                    "goods"
+                ],
+                "description": "UpdateGoodsParameters",
+                "operationId": "GoodsController.Update Goods Parameters",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "gid",
+                        "description": "id for goods",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} 修改商品成功"
+                    },
+                    "403": {
+                        "description": "lost data"
+                    }
+                }
+            }
+        },
+        "/goods/putState": {
+            "put": {
+                "tags": [
+                    "goods"
+                ],
+                "description": "UpdateGoodsState",
+                "operationId": "GoodsController.Update Goods State",
+                "parameters": [
+                    {
+                        "in": "formDate",
+                        "name": "gid",
+                        "description": "id for goods id",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    },
+                    {
+                        "in": "formDate",
+                        "name": "state",
+                        "description": "商品上下架",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} 修改商品成功"
+                    },
+                    "403": {
+                        "description": "lost data"
+                    }
+                }
+            }
+        },
+        "/goods/search": {
+            "post": {
+                "tags": [
+                    "goods"
+                ],
+                "description": "搜索某个商品",
+                "operationId": "GoodsController.search",
+                "parameters": [
+                    {
+                        "in": "formData",
+                        "name": "goodsName",
+                        "description": "good name",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    },
+                    {
+                        "in": "formData",
+                        "name": "img",
+                        "description": "body for user content",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} ok"
+                    },
+                    "403": {
+                        "description": "lost data"
                     }
                 }
             }
@@ -210,7 +752,7 @@
                         "name": "pageIndex",
                         "description": "pageIndex",
                         "schema": {
-                            "$ref": "#/definitions/.false"
+                            "$ref": "#/definitions/.true"
                         }
                     }
                 ],
@@ -278,6 +820,213 @@
                     }
                 }
             }
+        },
+        "/order/": {
+            "get": {
+                "tags": [
+                    "order"
+                ],
+                "description": "add cart",
+                "operationId": "OrderController.Get",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "uid",
+                        "description": "用户id",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} 订单添加成功"
+                    },
+                    "400": {
+                        "description": "订单添加失败"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "order"
+                ],
+                "description": "add cart",
+                "operationId": "OrderController.Put",
+                "parameters": [
+                    {
+                        "in": "formData",
+                        "name": "orderId",
+                        "description": "orderId",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    },
+                    {
+                        "in": "formData",
+                        "name": "addressId",
+                        "description": "addressId",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} 订单添加成功"
+                    },
+                    "400": {
+                        "description": "订单添加失败"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "order"
+                ],
+                "description": "add cart",
+                "operationId": "OrderController.Post",
+                "parameters": [
+                    {
+                        "in": "formData",
+                        "name": "pid",
+                        "description": "参数id",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    },
+                    {
+                        "in": "formData",
+                        "name": "count",
+                        "description": "添加数量",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} 订单添加成功"
+                    },
+                    "400": {
+                        "description": "订单添加失败"
+                    }
+                }
+            }
+        },
+        "/order/{oid}": {
+            "get": {
+                "tags": [
+                    "order"
+                ],
+                "description": "add cart",
+                "operationId": "OrderController.Get",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "oid",
+                        "description": "orderId",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} 订单查询成功"
+                    },
+                    "400": {
+                        "description": "订单查询失败"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "order"
+                ],
+                "description": "add cart",
+                "operationId": "OrderController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "oid",
+                        "description": "orderId",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} 订单添加成功"
+                    },
+                    "400": {
+                        "description": "订单添加失败"
+                    }
+                }
+            }
+        },
+        "/order/{uid}": {
+            "get": {
+                "tags": [
+                    "order"
+                ],
+                "description": "add cart",
+                "operationId": "OrderController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "oid",
+                        "description": "orderId",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} 订单添加成功"
+                    },
+                    "400": {
+                        "description": "订单添加失败"
+                    }
+                }
+            }
+        },
+        "/order/{uid}/{state}": {
+            "get": {
+                "tags": [
+                    "order"
+                ],
+                "description": "add cart",
+                "operationId": "OrderController.Get",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "state",
+                        "description": "订单状态",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "uid",
+                        "description": "用户id",
+                        "schema": {
+                            "$ref": "#/definitions/.true"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} 订单添加成功"
+                    },
+                    "400": {
+                        "description": "订单添加失败"
+                    }
+                }
+            }
         }
     },
     "definitions": {
@@ -286,6 +1035,19 @@
         },
         ".true": {
             "type": "object"
+        },
+        "controllers.Cart": {
+            "title": "Cart",
+            "type": "object",
+            "properties": {
+                "count": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "goodsParameter": {
+                    "$ref": "#/definitions/models.GoodsParameter"
+                }
+            }
         },
         "controllers.Goods": {
             "title": "Goods",
@@ -507,12 +1269,6 @@
                 "Name": {
                     "type": "string"
                 },
-                "OrderGoods": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/models.OrderGoods"
-                    }
-                },
                 "SalesValue": {
                     "type": "integer",
                     "format": "int64"
@@ -610,11 +1366,21 @@
                     "type": "integer",
                     "format": "int64"
                 },
+                "OrderGoods": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.OrderGoods"
+                    }
+                },
                 "Parameter": {
                     "type": "string"
                 },
                 "Parameter2": {
                     "type": "string"
+                },
+                "SalesValue": {
+                    "type": "integer",
+                    "format": "int64"
                 }
             }
         },
@@ -752,14 +1518,14 @@
                     "type": "integer",
                     "format": "int64"
                 },
-                "Goods": {
-                    "$ref": "#/definitions/models.Goods"
+                "GoodsParameter": {
+                    "$ref": "#/definitions/models.GoodsParameter"
                 },
                 "Id": {
                     "type": "integer",
                     "format": "int64"
                 },
-                "Order": {
+                "OrderInfo": {
                     "$ref": "#/definitions/models.OrderInfo"
                 },
                 "Price": {
@@ -792,8 +1558,12 @@
                         "$ref": "#/definitions/models.OrderGoods"
                     }
                 },
-                "OrderStatus": {
+                "OrderId": {
                     "type": "string"
+                },
+                "OrderStatus": {
+                    "type": "integer",
+                    "format": "int64"
                 },
                 "TotalCount": {
                     "type": "integer",

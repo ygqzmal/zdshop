@@ -1,0 +1,100 @@
+2021/01/23 02:39:51.908 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:40:07.514 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:42:47.133 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:42:50.177 [C] [panic.go:679] the request url is  /v1/goods/7
+2021/01/23 02:42:50.178 [C] [panic.go:679] Handler crashed with error wrong field/column name `Category_Name`
+2021/01/23 02:42:50.178 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/panic.go:679
+2021/01/23 02:42:50.178 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/orm/db.go:929
+2021/01/23 02:42:50.179 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/orm/orm_queryset.go:201
+2021/01/23 02:42:50.179 [C] [panic.go:679] D:/Go/awesomeProject/src/zdshop/controllers/goods.go:272
+2021/01/23 02:42:50.179 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/reflect/value.go:460
+2021/01/23 02:42:50.179 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/reflect/value.go:321
+2021/01/23 02:42:50.180 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/router.go:847
+2021/01/23 02:42:50.180 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/net/http/server.go:2802
+2021/01/23 02:42:50.180 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/net/http/server.go:1890
+2021/01/23 02:42:50.180 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/asm_amd64.s:1357
+2021/01/23 02:43:42.733 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:43:52.713 [C] [panic.go:679] the request url is  /v1/goods/7
+2021/01/23 02:43:52.713 [C] [panic.go:679] Handler crashed with error wrong field/column name `Category__Name`
+2021/01/23 02:43:52.714 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/panic.go:679
+2021/01/23 02:43:52.714 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/orm/db.go:929
+2021/01/23 02:43:52.714 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/orm/orm_queryset.go:201
+2021/01/23 02:43:52.715 [C] [panic.go:679] D:/Go/awesomeProject/src/zdshop/controllers/goods.go:272
+2021/01/23 02:43:52.715 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/reflect/value.go:460
+2021/01/23 02:43:52.715 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/reflect/value.go:321
+2021/01/23 02:43:52.715 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/router.go:847
+2021/01/23 02:43:52.716 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/net/http/server.go:2802
+2021/01/23 02:43:52.716 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/net/http/server.go:1890
+2021/01/23 02:43:52.716 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/asm_amd64.s:1357
+2021/01/23 02:44:12.034 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:44:24.008 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:44:23] "GET /v1/goods/7 HTTP/1.1 200 0" 0.008977  PostmanRuntime/7.26.8
+
+2021/01/23 02:44:27.188 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:44:27] "GET /v1/order/ HTTP/1.1 200 0" 0.000000  PostmanRuntime/7.26.8
+
+2021/01/23 02:46:50.002 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:46:50] "GET /v1/order/ HTTP/1.1 200 0" 0.000000  PostmanRuntime/7.26.8
+
+2021/01/23 02:47:15.577 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:47:15] "GET /v1/order/ HTTP/1.1 200 0" 0.001006  PostmanRuntime/7.26.8
+
+2021/01/23 02:47:53.462 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:47:53] "GET /v1/order/ HTTP/1.1 200 0" 0.000997  PostmanRuntime/7.26.8
+
+2021/01/23 02:48:39.909 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:50:12.644 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:50:12] "GET /v1/order/ HTTP/1.1 200 0" 0.003018  PostmanRuntime/7.26.8
+
+2021/01/23 02:51:41.630 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:51:44.142 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:51:44] "GET /v1/order/ HTTP/1.1 200 0" 0.009701  PostmanRuntime/7.26.8
+
+2021/01/23 02:53:03.113 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:53:04.832 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:53:04] "GET /v1/order/ HTTP/1.1 200 0" 0.000995  PostmanRuntime/7.26.8
+
+2021/01/23 02:53:41.131 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:53:44.089 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:53:44] "GET /v1/order/ HTTP/1.1 200 0" 0.000999  PostmanRuntime/7.26.8
+
+2021/01/23 02:54:27.806 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:54:37.149 [C] [panic.go:679] the request url is  /v1/goods/7
+2021/01/23 02:54:37.149 [C] [panic.go:679] Handler crashed with error wrong field/column name `category_name`
+2021/01/23 02:54:37.150 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/panic.go:679
+2021/01/23 02:54:37.150 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/orm/db.go:929
+2021/01/23 02:54:37.150 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/orm/orm_queryset.go:201
+2021/01/23 02:54:37.151 [C] [panic.go:679] D:/Go/awesomeProject/src/zdshop/controllers/goods.go:272
+2021/01/23 02:54:37.151 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/reflect/value.go:460
+2021/01/23 02:54:37.151 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/reflect/value.go:321
+2021/01/23 02:54:37.151 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/router.go:847
+2021/01/23 02:54:37.152 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/net/http/server.go:2802
+2021/01/23 02:54:37.152 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/net/http/server.go:1890
+2021/01/23 02:54:37.152 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/asm_amd64.s:1357
+2021/01/23 02:55:26.790 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:55:26] "GET /v1/order/ HTTP/1.1 200 0" 0.000998  PostmanRuntime/7.26.8
+
+2021/01/23 02:56:06.327 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:56:12.285 [C] [panic.go:679] the request url is  /v1/order/
+2021/01/23 02:56:12.286 [C] [panic.go:679] Handler crashed with error wrong field/column name `address_content`
+2021/01/23 02:56:12.286 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/panic.go:679
+2021/01/23 02:56:12.286 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/orm/db.go:929
+2021/01/23 02:56:12.287 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/orm/orm_queryset.go:194
+2021/01/23 02:56:12.287 [C] [panic.go:679] D:/Go/awesomeProject/src/zdshop/controllers/order.go:70
+2021/01/23 02:56:12.287 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/reflect/value.go:460
+2021/01/23 02:56:12.287 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/reflect/value.go:321
+2021/01/23 02:56:12.287 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/router.go:847
+2021/01/23 02:56:12.288 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/net/http/server.go:2802
+2021/01/23 02:56:12.288 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/net/http/server.go:1890
+2021/01/23 02:56:12.288 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/asm_amd64.s:1357
+2021/01/23 02:56:41.683 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:56:45.137 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:56:45] "GET /v1/goods/7 HTTP/1.1 200 0" 0.002998  PostmanRuntime/7.26.8
+
+2021/01/23 02:58:15.859 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:58:17.325 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 02:58:22.316 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 02:58:22] "GET /v1/order/ HTTP/1.1 200 0" 0.001995  PostmanRuntime/7.26.8
+
+2021/01/23 03:03:52.220 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 03:04:08.620 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 03:04:19.628 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 03:04:19] "GET /v1/order/ HTTP/1.1 200 0" 0.001995  PostmanRuntime/7.26.8
+
+2021/01/23 03:06:05.145 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 03:06:29.042 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 03:06:29] "GET /v1/order/ HTTP/1.1 200 0" 0.000997  PostmanRuntime/7.26.8
+
+2021/01/23 03:13:23.104 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 03:13:28.350 [C] [panic.go:679] the request url is  /v1/order/
+2021/01/23 03:13:28.351 [C] [panic.go:679] Handler crashed with error Raw value: `2021-01-22 18:12:47 +0000 UTC` convert to `*time.Duration` failed, field: zdshop/models.OrderInfo.CreateTime err: strconv.ParseInt: parsing "2021-01-22 18:12:47 +0000 UTC": invalid syntax
+2021/01/23 03:13:28.351 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/panic.go:679
+2021/01/23 03:13:28.352 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/orm/db.go:1190
+2021/01/23 03:13:28.352 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/orm/db.go:1005
+2021/01/23 03:13:28.352 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/orm/orm_queryset.go:194

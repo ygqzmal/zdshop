@@ -3,6 +3,7 @@ package controllers
 import (
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
+	"os"
 	"zdshop/models"
 	"zdshop/utils"
 )
@@ -14,9 +15,9 @@ type CategoryController struct {
 
 // @Title Post
 // @Description add category
-// @Param name formData true "分类名称"
-// @Param categoryId formData false "分类名称"
-// @Param image formData false "分类名称"
+// @Param categoryName formData true  "分类名称"
+// @Param categoryId   formData false "分类ID"
+// @Param image        formData false "分类图片"
 // @Success  200 {string} 分类添加成功
 // @Failure 400 分类添加失败
 // @router / [post]
@@ -58,10 +59,16 @@ func (this *CategoryController) PostCategory() {
 		this.Data["json"] = resp
 		return
 	}
-	//否则是二级分类, 添加名字+图片且pId = id
-	message, url := utils.HandleFile2(&this.Controller, "image")
+	if _, _, err = this.GetFile("image"); err != nil {
+		beego.Info("二级分类图片不能为空")
+		return
+	}
+
+	//否则是二级分类, 添加名字+图片且pId = id  200000=2M
+	//第二个参数为表单key值，第三个参数为最大大小
+	message, url := utils.HandleFile(&this.Controller, "image", 200000)
 	if message != "" {
-		beego.Info("图片添加失败")
+		beego.Info("图片添加失败, err", message)
 		return
 	}
 	newCategory.Name = name
@@ -146,23 +153,66 @@ func (this *CategoryController) DeleteCategory() {
 	//可以判断这个分类在不在
 	exist := o.QueryTable("GoodsCategory").Filter("Id", id).Exist()
 	if !exist {
-		beego.Info("该分类名称不存在")
+		beego.Info("该分类不存在")
 		resp["code"] = 400
-		resp["errMsg"] = "该分类名称不存在"
+		resp["errMsg"] = "该分类不存在"
 		this.Data["json"] = resp
 		return
 	}
 	err = o.Read(&category)
 	pId := category.ParentId
+	o.Begin()
 	if pId == 0 {
-		//删除一级分类,以及该分类下所有分类
-		o.Begin()
-		_, err = o.QueryTable("GoodsCategory").Filter("ParentId__in", category.Id).Delete()
-		//_, err = o.Delete(secondCategorys)
+		//说明是删除一级分类,要删除该分类以及所有子分类
+		var categorgs []models.GoodsCategory
+		_, err := o.QueryTable("GoodsCategory").Filter("ParentId", category.Id).All(&categorgs,"Id","Image")
 		if err != nil {
-			o.Rollback()
-			beego.Info(err)
+			beego.Info("二级分类查询失败")
+			return
 		}
+		//如果存在二级分类
+		if len(categorgs) != 0 {
+			var goods []*models.Goods
+			//先删除二级分类本身所有图片
+			//再删除所有二级分类下所有商品的轮播图
+			for _, value := range categorgs {
+				path := value.Image
+				err = os.Remove(path)
+				if err != nil {
+					beego.Info("图片删除失败")
+					return
+				}
+				
+				cid := value.Id
+				_, err := o.QueryTable("Goods").Filter("Category__Id", cid).All(&goods,"Id")
+				if err != nil {
+					beego.Info(err)
+					return
+				}
+				//如果该二级分类下不存在商品则跳过次此循环
+				if len(goods) == 0 {
+					continue
+				}
+				//如果存在二级分类,对该商品所有图片进行删除
+				for _, value := range goods {
+					goodsId := value.Id
+					message := utils.HandleFiles(goodsId)
+					if message != "" {
+						beego.Info(message)
+						continue
+					}
+				}
+			}
+			//删除所有二级分类
+			_, err = o.QueryTable("GoodsCategory").Filter("ParentId__in", category.Id).Delete()
+			//_, err = o.Delete(secondCategorys)
+			if err != nil {
+				o.Rollback()
+				beego.Info(err)
+			}
+		}
+		//如果该一级分类不存在二级分类,只需要删除一级分类
+		//删除一级分类
 		_, err = o.Delete(&category)
 		if err != nil {
 			o.Rollback()
@@ -175,12 +225,38 @@ func (this *CategoryController) DeleteCategory() {
 		this.Data["json"] = resp
 		return
 	}
-	//删除二级分类
+	//说明是二级分类, 删除二级分类
+	//删除分类前,将该分类下所有的商品图片要删掉,虽然会联级删除,但是图片本身删不了
+	var goods []*models.Goods
+	_, err = o.QueryTable("Goods").Filter("Category__id", id).All(&goods, "Id")
+	if err != nil {
+		o.Rollback()
+		beego.Info(err)
+		return
+	}
+	for _, value := range goods {
+		goodsId := value.Id
+		message := utils.HandleFiles(goodsId)
+		if message != "" {
+			beego.Info(message)
+			return
+		}
+	}
+	//删除分类前把二级分类图片删除
+	path := category.Image
+	err = os.Remove(path)
+	if err != nil {
+		beego.Info("商品图片删除失败 err", err)
+		return
+	}
 	_, err = o.Delete(&category)
 	if err != nil {
+		o.Rollback()
 		beego.Info("商品删除失败")
 		return
 	}
+	beego.Info("分类删除成功")
+	o.Commit()
 	resp["code"] = 200
 	resp["succMsg"] = "分类删除成功"
 	this.Data["json"] = resp
@@ -194,7 +270,7 @@ func (this *CategoryController) DeleteCategory() {
 // @Success  200 {string} 成功
 // @Failure 400 失败
 // @router / [put]
-func (this *GoodsController) UpdateCategory() {
+func (this *CategoryController) UpdateCategory() {
 	id, err := this.GetInt("cid")
 	if err != nil {
 		beego.Info("参数传递失败")
@@ -205,10 +281,12 @@ func (this *GoodsController) UpdateCategory() {
 	var category models.GoodsCategory
 	category.Id = id
 	category.Name = name
-	_, err = o.Update(&category)
+	_, err = o.Update(&category,"Name","UpdateTime")
 	if err != nil {
-		beego.Info("更新失败")
+		beego.Info("更新失败", err)
 		return
 	}
-
+	beego.Info("更新成功")
+	return
 }
+

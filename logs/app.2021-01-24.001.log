@@ -1,0 +1,101 @@
+2021/01/23 03:13:28.352 [C] [panic.go:679] D:/Go/awesomeProject/src/zdshop/controllers/order.go:70
+2021/01/23 03:13:28.356 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/reflect/value.go:460
+2021/01/23 03:13:28.356 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/reflect/value.go:321
+2021/01/23 03:13:28.356 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/router.go:847
+2021/01/23 03:13:28.356 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/net/http/server.go:2802
+2021/01/23 03:13:28.356 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/net/http/server.go:1890
+2021/01/23 03:13:28.357 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/asm_amd64.s:1357
+2021/01/23 03:14:55.726 [I] [order.go:187] Error 1292: Incorrect datetime value: '0' for column 'create_time' at row 1 
+2021/01/23 03:14:55.728 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 03:14:55] "POST /v1/order/ HTTP/1.1 200 0" 0.002978  PostmanRuntime/7.26.8
+
+2021/01/23 03:17:24.978 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 03:18:05.150 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 03:18:06.734 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 15:02:57.462 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 15:03:24.691 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 03:03:24] "GET /v1/order/ HTTP/1.1 200 0" 0.002995  PostmanRuntime/7.26.8
+
+2021/01/23 15:05:05.175 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 15:05:10.110 [I] [order.go:80] [0xc0000d61c0 0xc0000d6230] 
+2021/01/23 15:05:10.111 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 03:05:10] "GET /v1/order/ HTTP/1.1 200 0" 0.001995  PostmanRuntime/7.26.8
+
+2021/01/23 15:10:47.562 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 15:11:10.111 [I] [order.go:80] [0xc0000d61c0 0xc0000d6230] 
+2021/01/23 15:11:10.113 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 03:11:10] "GET /v1/order/ HTTP/1.1 200 0" 0.001994  PostmanRuntime/7.26.8
+
+2021/01/23 15:14:35.475 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 15:14:41.580 [I] [order.go:80] [0xc00016a1c0 0xc00016a230] 
+2021/01/23 15:14:41.581 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 03:14:41] "GET /v1/order/ HTTP/1.1 200 0" 0.001995  PostmanRuntime/7.26.8
+
+2021/01/23 15:14:58.379 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 15:23:55.799 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 15:27:02.718 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 15:27:14.593 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 15:27:25.578 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 15:27:46.861 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 03:27:46] "DELETE /v1/order/7 HTTP/1.1 200 0" 0.000997  PostmanRuntime/7.26.8
+
+2021/01/23 15:39:52.889 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 15:40:23.262 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 03:40:23] "PUT /v1/order/ HTTP/1.1 404 0" 0.000991  PostmanRuntime/7.26.8
+
+2021/01/23 15:40:45.373 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 03:40:45] "PUT /v1/order/ HTTP/1.1 404 0" 0.000000  PostmanRuntime/7.26.8
+
+2021/01/23 15:40:49.547 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 03:40:49] "PUT /v1/order/ HTTP/1.1 404 0" 0.000998  PostmanRuntime/7.26.8
+
+2021/01/23 15:41:08.112 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 15:41:19.148 [I] [order.go:122] 参数传递错误 
+2021/01/23 15:41:19.150 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 03:41:19] "PUT /v1/order/ HTTP/1.1 200 0" 0.001995  PostmanRuntime/7.26.8
+
+2021/01/23 15:41:46.679 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 15:41:50.823 [I] [order.go:122] 参数传递错误 
+2021/01/23 15:41:50.823 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 03:41:50] "PUT /v1/order/ HTTP/1.1 200 0" 0.000996  PostmanRuntime/7.26.8
+
+2021/01/23 15:42:03.095 [I] [order.go:122] 参数传递错误 
+2021/01/23 15:42:03.095 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 03:42:03] "PUT /v1/order/ HTTP/1.1 200 0" 0.000000  PostmanRuntime/7.26.8
+
+2021/01/23 15:42:15.574 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 03:42:15] "PUT /v1/order/ HTTP/1.1 200 0" 0.001998  PostmanRuntime/7.26.8
+
+2021/01/23 16:10:20.598 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 16:10:58.491 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 04:10:58] "GET /v1/order/7 HTTP/1.1 200 0" 0.000998  PostmanRuntime/7.26.8
+
+2021/01/23 16:11:07.935 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 04:11:07] "GET /v1/order/7 HTTP/1.1 200 0" 0.000000  PostmanRuntime/7.26.8
+
+2021/01/23 16:11:46.342 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 16:11:52.686 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 04:11:52] "GET /v1/order/7 HTTP/1.1 200 0" 0.011970  PostmanRuntime/7.26.8
+
+2021/01/23 16:12:57.701 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 16:13:11.089 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 04:13:11] "GET /v1/order/7 HTTP/1.1 200 0" 0.010970  PostmanRuntime/7.26.8
+
+2021/01/23 16:13:32.667 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/23 16:13:36.398 [D] [server.go:2802] 127.0.0.1 - - [23/Jan/2021 04:13:36] "GET /v1/order/7 HTTP/1.1 200 0" 0.001999  PostmanRuntime/7.26.8
+
+2021/01/24 00:52:51.153 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/24 00:53:01.136 [D] [server.go:2802] 127.0.0.1 - - [24/Jan/2021 12:53:01] "GET /v1/order/7 HTTP/1.1 200 0" 0.010970  PostmanRuntime/7.26.8
+
+2021/01/24 00:54:21.777 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/24 00:54:29.563 [D] [server.go:2802] 127.0.0.1 - - [24/Jan/2021 12:54:29] "GET /v1/order/7 HTTP/1.1 200 0" 0.012965  PostmanRuntime/7.26.8
+
+2021/01/24 00:57:19.505 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/24 00:59:13.210 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/24 00:59:17.032 [D] [server.go:2802] 127.0.0.1 - - [24/Jan/2021 12:59:17] "GET /v1/order/7 HTTP/1.1 200 0" 0.007982  PostmanRuntime/7.26.8
+
+2021/01/24 01:02:50.841 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/24 01:10:23.166 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/24 01:12:08.294 [D] [server.go:2802] 127.0.0.1 - - [24/Jan/2021 01:12:08] "GET /v1/order/7 HTTP/1.1 200 0" 0.005982  PostmanRuntime/7.26.8
+
+2021/01/24 01:12:46.219 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/24 01:12:49.295 [C] [panic.go:679] the request url is  /v1/order/7
+2021/01/24 01:12:49.295 [C] [panic.go:679] Handler crashed with error unknown model/table name `Goods`
+2021/01/24 01:12:49.296 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/panic.go:679
+2021/01/24 01:12:49.296 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/orm/db_tables.go:160
+2021/01/24 01:12:49.297 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/orm/db.go:950
+2021/01/24 01:12:49.297 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/orm/orm_queryset.go:194
+2021/01/24 01:12:49.297 [C] [panic.go:679] D:/Go/awesomeProject/src/zdshop/controllers/order.go:356
+2021/01/24 01:12:49.298 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/reflect/value.go:460
+2021/01/24 01:12:49.298 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/reflect/value.go:321
+2021/01/24 01:12:49.299 [C] [panic.go:679] D:/Go/awesomeProject/src/github.com/astaxie/beego/router.go:847
+2021/01/24 01:12:49.299 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/net/http/server.go:2802
+2021/01/24 01:12:49.299 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/net/http/server.go:1890
+2021/01/24 01:12:49.300 [C] [panic.go:679] D:/Go/sdk/go1.13.5/src/runtime/asm_amd64.s:1357
+2021/01/24 01:22:30.829 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/24 01:22:49.857 [I] [asm_amd64.s:1357] http server Running on http://:8080
+2021/01/24 01:22:54.424 [D] [server.go:2802] 127.0.0.1 - - [24/Jan/2021 01:22:54] "GET /v1/order/7 HTTP/1.1 200 0" 0.003989  PostmanRuntime/7.26.8
+
