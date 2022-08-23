@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+option go_package = ".;goods";
+
+package goods;
+
+service Goods {
+  rpc GetOneGoods (GetOneGoodsRequest) returns (GetOneGoodsReply) {}
+}
+
+message GetOneGoodsRequest {
+  string gid = 1;
+}
+
+message GetOneGoodsReply {
+  GoodsInfo goods = 1;
+  ParametersInfo parameters = 2;
+  BannerInfo banner = 3;
+}
+
+message GoodsInfo {
+  int64 id = 1;
+  string name = 2;
+  string goodsBrief =3;
+  string explain= 4;
+  string salesValue=5;
+  string category_id=6;
+}
+
+
+message ParametersInfo {
+  int64 id = 1;
+  string parameter = 2;
+  string goodsTruePrice = 3;
+  string goodsNowPrice= 4;
+  string isDefault = 5;
+  string goodsNumber = 6;
+}
+
+message BannerInfo {
+  int64 id = 1;
+  string goodsUrl = 2;
+  string isDefault = 3;
+}

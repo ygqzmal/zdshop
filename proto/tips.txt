@@ -1,0 +1,2 @@
+//proto生成文件命令
+protoc  --plugin=protoc-gen-go=../../bin/protoc-gen-go.exe --plugin=protoc-gen-go-grpc=../../bin/protoc-gen-go-grpc.exe -I=./proto --go_out=./proto-go --go-grpc_out=./proto-go ./proto/goods.proto

@@ -1,0 +1,83 @@
+2022/04/27 04:23:28.401 [C] [panic.go:965]  D:/Go/sdk/go1.13.5/src/reflect/value.go:337
+2022/04/27 04:23:28.412 [C] [panic.go:965]  D:/Go/awesomeProject/pkg/mod/github.com/astaxie/beego@v1.12.3/router.go:897
+2022/04/27 04:23:28.416 [C] [panic.go:965]  D:/Go/sdk/go1.13.5/src/net/http/server.go:2867
+2022/04/27 04:23:28.418 [C] [panic.go:965]  D:/Go/sdk/go1.13.5/src/net/http/server.go:1932
+2022/04/27 04:23:28.420 [C] [panic.go:965]  D:/Go/sdk/go1.13.5/src/runtime/asm_amd64.s:1371
+2022/04/27 04:23:28.422 [server.go:3117]  [HTTP] http: superfluous response.WriteHeader call from github.com/astaxie/beego/context.(*Response).WriteHeader (context.go:230)
+2022/04/27 04:24:07.990 [I] [asm_amd64.s:1371]  http server Running on http://:8080
+2022/04/27 04:24:11.295 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|    42.8303ms|   match|[44m GET     [0m /v1/goods//3   r:/v1/goods/:gid
+2022/04/27 04:28:39.208 [I] [asm_amd64.s:1371]  http server Running on http://:8080
+2022/04/27 04:28:44.033 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|    39.0434ms|   match|[44m GET     [0m /v1/goods//3   r:/v1/goods/:gid
+2022/05/13 15:21:20.931 [I] [asm_amd64.s:1371]  http server Running on http://:8080
+2022/05/13 15:25:57.136 [I] [asm_amd64.s:1371]  http server Running on http://:8080
+2022/05/13 15:30:02.165 [D] [server.go:2867]  |      127.0.0.1|[47m 302 [0m|        556µs|   match|[44m GET     [0m /swagger
+2022/05/13 15:30:02.188 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|      9.816ms|   match|[44m GET     [0m /swagger/
+2022/05/13 15:30:02.228 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|     3.3474ms|   match|[44m GET     [0m /swagger/swagger-ui.css
+2022/05/13 15:30:02.231 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|     5.3261ms|   match|[44m GET     [0m /swagger/swagger-ui-standalone-preset.js
+2022/05/13 15:30:02.246 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|    21.1853ms|   match|[44m GET     [0m /swagger/swagger-ui-bundle.js
+2022/05/13 15:30:02.476 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|     1.9967ms|   match|[44m GET     [0m /swagger/swagger.json
+2022/05/13 15:30:02.534 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|     1.9801ms|   match|[44m GET     [0m /swagger/favicon-32x32.png
+2022/05/13 15:43:22.824 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|    24.8416ms|   match|[46m POST    [0m /v1/order   r:/v1/order/
+2022/05/13 16:04:43.206 [I] [asm_amd64.s:1371]  http server Running on http://:8080
+2022/05/13 16:06:31.274 [D] [server.go:2867]  |      127.0.0.1|[47m 304 [0m|     2.2404ms|   match|[44m GET     [0m /swagger/
+2022/05/13 16:06:31.549 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|       1.94ms|   match|[44m GET     [0m /swagger/favicon-32x32.png
+2022/05/13 16:10:47.101 [I] [asm_amd64.s:1371]  http server Running on http://:8080
+2022/05/13 16:11:44.894 [D] [server.go:2867]  |      127.0.0.1|[43m 404 [0m|        627µs| nomatch|[44m GET     [0m /v1/HandlePay
+2022/05/13 16:12:24.816 [I] [asm_amd64.s:1371]  http server Running on http://:8080
+2022/05/13 16:12:37.731 [D] [server.go:2867]  |      127.0.0.1|[43m 404 [0m|      813.2µs| nomatch|[44m GET     [0m /v1/HandlePay
+2022/05/13 16:12:43.470 [D] [server.go:2867]  |      127.0.0.1|[47m 304 [0m|     1.9443ms|   match|[44m GET     [0m /swagger/
+2022/05/13 16:12:43.735 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|     3.2651ms|   match|[44m GET     [0m /swagger/favicon-32x32.png
+2022/05/13 16:13:57.422 [D] [server.go:2867]  |      127.0.0.1|[43m 404 [0m|      971.1µs| nomatch|[44m GET     [0m /v1/pay
+2022/05/13 16:13:59.583 [D] [server.go:2867]  |      127.0.0.1|[43m 404 [0m|      721.2µs| nomatch|[44m GET     [0m /v1/pay
+2022/05/13 16:14:24.686 [D] [server.go:2867]  |      127.0.0.1|[47m 302 [0m|     3.0889ms|   match|[44m GET     [0m /v1/order/pay   r:/v1/order/pay
+2022/05/13 16:15:14.014 [I] [asm_amd64.s:1371]  http server Running on http://:8080
+2022/05/13 16:16:27.392 [I] [asm_amd64.s:1371]  http server Running on http://:8080
+2022/05/13 16:17:12.347 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|      3.393ms|   match|[44m GET     [0m /v1/order/pay   r:/v1/order/pay
+2022/05/13 16:21:11.694 [I] [asm_amd64.s:1371]  http server Running on http://:8080
+2022/05/13 16:21:15.397 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|     5.4098ms|   match|[44m GET     [0m /v1/order/pay   r:/v1/order/pay
+2022/05/13 16:24:05.093 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|     2.4644ms|   match|[44m GET     [0m /v1/order/pay   r:/v1/order/pay
+2022/05/13 16:26:23.586 [I] [asm_amd64.s:1371]  http server Running on http://:8080
+2022/05/13 16:26:41.002 [I] [asm_amd64.s:1371]  http server Running on http://:8080
+2022/05/13 16:26:45.623 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|     5.9421ms|   match|[44m GET     [0m /v1/order/pay   r:/v1/order/pay
+2022/05/13 16:29:25.785 [I] [asm_amd64.s:1371]  http server Running on http://:8080
+2022/05/13 16:30:06.193 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|    12.3214ms|   match|[44m GET     [0m /v1/order/pay   r:/v1/order/:oid
+2022/05/13 16:30:17.086 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|     2.7732ms|   match|[46m POST    [0m /v1/order/pay   r:/v1/order/pay
+2022/05/13 16:30:50.364 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|     2.4505ms|   match|[46m POST    [0m /v1/order/pay   r:/v1/order/pay
+2022/05/20 18:09:07.707 [I] [asm_amd64.s:1371]  http server Running on http://:8080
+2022/05/20 18:09:09.700 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|     2.0196ms|   match|[44m GET     [0m /swagger/
+2022/05/20 18:09:09.999 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|    11.0951ms|   match|[44m GET     [0m /swagger/swagger-ui.css
+2022/05/20 18:09:10.145 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|     3.0828ms|   match|[44m GET     [0m /swagger/swagger-ui-standalone-preset.js
+2022/05/20 18:09:10.165 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|    35.2358ms|   match|[44m GET     [0m /swagger/swagger-ui-bundle.js
+2022/05/20 18:09:11.183 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|     2.8473ms|   match|[44m GET     [0m /swagger/swagger.json
+2022/05/20 18:09:12.383 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|      3.038ms|   match|[44m GET     [0m /swagger/favicon-32x32.png
+2022/05/20 21:12:15.466 [I] [asm_amd64.s:1371]  http server Running on http://:8080
+2022/05/20 21:13:09.211 [I] [goods.go:337]  GetAll 
+2022/05/20 21:13:09.212 [I] [goods.go:350]  1 
+2022/05/20 21:13:09.273 [I] [goods.go:402]  [0xc00008c270 0xc00008c340] 
+2022/05/20 21:13:09.275 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|    64.6733ms|   match|[44m GET     [0m /v1/goods/8/1   r:/v1/goods/:cid/:pageIndex
+2022/05/20 21:13:44.184 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|      998.6µs|   match|[46m POST    [0m /v1/goods/search   r:/v1/goods/search
+2022/05/20 21:14:02.227 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|      707.2µs|   match|[46m POST    [0m /v1/goods/search   r:/v1/goods/search
+2022/05/20 21:14:17.418 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|   2.3728387s|   match|[44m GET     [0m /v1/goods//3   r:/v1/goods/:gid
+2022/05/20 21:14:30.989 [I] [goods.go:337]  GetAll 
+2022/05/20 21:14:30.993 [I] [goods.go:350]  1 
+2022/05/20 21:14:30.997 [I] [goods.go:402]  [] 
+2022/05/20 21:14:30.998 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|     8.1248ms|   match|[44m GET     [0m /v1/goods/3/3   r:/v1/goods/:cid/:pageIndex
+2022/05/20 21:14:58.105 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|    2.343225s|   match|[44m GET     [0m /v1/goods/3   r:/v1/goods/:gid
+2022/05/20 21:15:23.214 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|   2.3383203s|   match|[44m GET     [0m /v1/goods/4   r:/v1/goods/:gid
+2022/05/20 21:15:45.335 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|    30.9063ms|   match|[44m GET     [0m /v1/goods/4   r:/v1/goods/:gid
+2022/05/20 21:16:23.576 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|    20.7721ms|   match|[44m GET     [0m /v1/cart   r:/v1/cart/
+2022/05/20 21:19:26.132 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|     9.4953ms|   match|[44m GET     [0m /v1/order/2022051315431   r:/v1/order/:oid
+2022/05/20 21:25:29.124 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|     8.4196ms|   match|[46m POST    [0m /v1/order/pay   r:/v1/order/pay
+2022/05/20 21:27:49.900 [I] [asm_amd64.s:1371]  http server Running on http://:8080
+2022/05/20 21:27:56.478 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|     5.4161ms|   match|[46m POST    [0m /v1/order/pay   r:/v1/order/pay
+2022/05/20 22:00:07.467 [I] [asm_amd64.s:1371]  http server Running on http://:8080
+2022/05/20 22:00:59.164 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|    41.1226ms|   match|[44m GET     [0m /v1/goods/3   r:/v1/goods/:gid
+2022/05/20 22:05:52.547 [I] [asm_amd64.s:1371]  http server Running on http://:8080
+2022/05/20 22:05:56.312 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|    83.8702ms|   match|[44m GET     [0m /v1/goods/3   r:/v1/goods/:gid
+2022/05/20 22:06:37.615 [I] [asm_amd64.s:1371]  http server Running on http://:8080
+2022/05/20 22:06:43.484 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|   2.3624267s|   match|[44m GET     [0m /v1/goods/3   r:/v1/goods/:gid
+2022/05/21 07:57:03.995 [I] [asm_amd64.s:1371]  http server Running on http://:8080
+2022/05/21 07:57:14.449 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|    85.7897ms|   match|[44m GET     [0m /v1/goods/3   r:/v1/goods/:gid
+2022/05/21 07:57:25.102 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|     4.3705ms|   match|[46m POST    [0m /v1/order/pay   r:/v1/order/pay
+2022/05/21 09:10:58.118 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|    21.7568ms|   match|[44m GET     [0m /v1/order/7   r:/v1/order/:oid
+2022/05/21 09:11:26.196 [D] [server.go:2867]  |      127.0.0.1|[42m 200 [0m|     4.8463ms|   match|[46m POST    [0m /v1/order/pay   r:/v1/order/pay

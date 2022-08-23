@@ -38,8 +38,8 @@ type ReOrderGood struct {
 // @Description add cart
 // @Param state path true "订单状态"
 // @Param uid path true "用户id"
-// @Success  200 {string} 订单添加成功
-// @Failure 400 订单添加失败
+// @Success  200 {string} 订单获取成功
+// @Failure 400 订单获取失败
 // @router /:uid/:state [get]
 func (this *OrderController) GetPayOrder() {
 	//0-未支付 1-已支付
@@ -347,6 +347,7 @@ func (this *OrderController) DeleteOrder() {
 // @Failure 400 订单查询失败
 // @router /:oid [get]
 func (this *OrderController) GetOneOrderInfo() {
+
 	oid, _ := this.GetInt(":oid")
 
 	var orderInfo models.OrderInfo
@@ -362,7 +363,7 @@ func (this *OrderController) GetOneOrderInfo() {
 	for _, value := range orderGoods {
 		var temp ReOrderGood
 		var parameter models.GoodsParameter
-		err := o.QueryTable("GoodsParameter").Filter("Id", value.GoodsParameter.Id).One(&parameter, "Goods","Parameter")
+		err := o.QueryTable("GoodsParameter").Filter("Id", value.GoodsParameter.Id).One(&parameter, "Goods", "Parameter")
 		if err != nil {
 			beego.Info(err)
 			return
@@ -389,4 +390,5 @@ func (this *OrderController) GetOneOrderInfo() {
 	resp["createTime"] = orderInfo.CreateTime.Format("2006-01-02 15:04:05")
 	this.Data["json"] = resp
 	return
+
 }
