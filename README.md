@@ -1,4 +1,5 @@
-@[TOC](beego+orm 实战简易小商城项目)
+@[TOC](beego+orm 实战简易小商城项目), 
+ps: ygq分支上进一步完善项目
 # 前言
 
 <font color=#999AAA >
